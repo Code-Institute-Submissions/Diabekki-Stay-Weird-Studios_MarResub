@@ -1,0 +1,50 @@
+[{
+    "pk": 1,
+    "model": "merchandise.category",
+    "fields": {
+        "name": "tanks",
+        "friendly_name": "Tanks"
+    }
+}, {
+    "pk": 3,
+    "model": "merchandise.category",
+    "fields": {
+        "name": "clearance",
+        "friendly_name": "Clearance"
+    }
+}, {
+    "pk": 4,
+    "model": "merchandise.category",
+    "fields": {
+        "name": "deals",
+        "friendly_name": "Deals"
+    }
+}, {
+    "pk": 5,
+    "model": "merchandise.category",
+    "fields": {
+        "name": "miscellaneous",
+        "friendly_name": "Miscellaneous"
+    }
+}, {
+    "pk": 6,
+    "model": "merchandise.category",
+    "fields": {
+        "name": "hoodies",
+        "friendly_name": "Hoodies"
+    }
+}, {
+    "pk": 8,
+    "model": "merchandise.category",
+    "fields": {
+        "name": "new_arrivals",
+        "friendly_name": "New Arrivals"
+    }
+}, {
+    "pk": 9,
+    "model": "merchandise.category",
+    "fields": {
+        "name": "tshirts",
+        "friendly_name": "Tshirts"
+    }
+}]

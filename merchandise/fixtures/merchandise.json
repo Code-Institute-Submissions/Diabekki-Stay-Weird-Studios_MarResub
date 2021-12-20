@@ -1,0 +1,121 @@
+[{
+    "pk": 1,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5001340155",
+        "name": "Weird Cylinder Bag",
+        "description": "Stylish and casual bag for everyday use",
+        "price": 15.99,
+        "category": 5,
+        "rating": 4.6,
+        "image": "bag.png"
+    }
+}, {
+    "pk": 2,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5001600425",
+        "name": "Weird Cylinder Baseball Cap",
+        "description": "Sleek Weird Cyinder baseball cap",
+        "price": 9.99,
+        "category": 5,
+        "rating": 4.6,
+        "image": "baseball-cap.png"
+    }
+}, {
+    "pk": 3,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5001730010",
+        "name": "Weird Cylinder Baseball Shirt",
+        "description": "Style and comfort in one weird package",
+        "price": 17.99,
+        "category": 9,
+        "rating": 4.7,
+        "image": "baseball-shirt.png"
+    }
+}, {
+    "pk": 4,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5001890157",
+        "name": "Weird Cylinder Tank Top",
+        "description": "Comfy and light for our summer gigs",
+        "price": 9.99,
+        "category": 1,
+        "rating": 3.0,
+        "image": "Tank.png"
+    }
+}, {
+    "pk": 5,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5002111605",
+        "name": "Weird Cylinder T-shirt (Black)",
+        "description": "Light and casual tshirt",
+        "price": 15.99,
+        "category": 9,
+        "rating": 5.0,
+        "image": "tshirt-black.png"
+    }
+}, {
+    "pk": 6,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5002260206",
+        "name": "Weird Cylinder T-shirt (Red)",
+        "description": "Light and casual tshirt",
+        "price": 15.99,
+        "category": 9,
+        "rating": 4.7,
+        "image": "tshirt-red.png"
+    }
+}, {
+    "pk": 7,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5002440521",
+        "name": "Weird Cylinder T-shirt (Grey)",
+        "description": "Light and casual tshirt",
+        "price": 15.99,
+        "category": 9,
+        "rating": 4.4,
+        "image": "tshirt-grey.png"
+    }
+}, {
+    "pk": 8,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5002601115",
+        "name": "Weird Cylinder Hoodie (Grey)",
+        "description": "Warm and cozy Weird Cylinder hoodie",
+        "price": 20.00,
+        "category": 6,
+        "rating": 4.5,
+        "image": "weird-hoodie-grey.png"
+    }
+}, {
+    "pk": 9,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5002690715",
+        "name": "Weird Cylinder Hoodie (White)",
+        "description": "Warm and cozy Weird Cylinder hoodie",
+        "price": 20.00,
+        "category": 6,
+        "rating": 4.7,
+        "image": "weird-hoodie-white.png"
+    }
+}, {
+    "pk": 10,
+    "model": "merchandise.Merch",
+    "fields": {
+        "sku": "pp5002701115",
+        "name": "Weird Cylinder Hoodie (Red)",
+        "description": "Warm and cozy Weird Cylinder hoodie",
+        "price": 20.00,
+        "category": 6,
+        "rating": 4.4,
+        "image": "weird-hoodie-red.png"
+    }
+}]
