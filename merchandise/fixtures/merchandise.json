@@ -4,7 +4,7 @@
     "fields": {
         "sku": "pp5001340155",
         "name": "Weird Cylinder Bag",
-        "description": "Stylish and casual bag for everyday use",
+        "description": "bag",
         "price": 15.99,
         "category": 5,
         "rating": 4.6,
@@ -16,7 +16,7 @@
     "fields": {
         "sku": "pp5001600425",
         "name": "Weird Cylinder Baseball Cap",
-        "description": "Sleek Weird Cyinder baseball cap",
+        "description": "cap",
         "price": 9.99,
         "category": 5,
         "rating": 4.6,
@@ -28,7 +28,7 @@
     "fields": {
         "sku": "pp5001730010",
         "name": "Weird Cylinder Baseball Shirt",
-        "description": "Style and comfort in one weird package",
+        "description": "shirt",
         "price": 17.99,
         "category": 9,
         "rating": 4.7,
@@ -40,7 +40,7 @@
     "fields": {
         "sku": "pp5001890157",
         "name": "Weird Cylinder Tank Top",
-        "description": "Comfy and light for our summer gigs",
+        "description": "tank",
         "price": 9.99,
         "category": 1,
         "rating": 3.0,
@@ -52,7 +52,7 @@
     "fields": {
         "sku": "pp5002111605",
         "name": "Weird Cylinder T-shirt (Black)",
-        "description": "Light and casual tshirt",
+        "description": "t-shirt",
         "price": 15.99,
         "category": 9,
         "rating": 5.0,
@@ -64,7 +64,7 @@
     "fields": {
         "sku": "pp5002260206",
         "name": "Weird Cylinder T-shirt (Red)",
-        "description": "Light and casual tshirt",
+        "description": "t-shirt",
         "price": 15.99,
         "category": 9,
         "rating": 4.7,
@@ -76,7 +76,7 @@
     "fields": {
         "sku": "pp5002440521",
         "name": "Weird Cylinder T-shirt (Grey)",
-        "description": "Light and casual tshirt",
+        "description": "t-shirt",
         "price": 15.99,
         "category": 9,
         "rating": 4.4,
@@ -88,7 +88,7 @@
     "fields": {
         "sku": "pp5002601115",
         "name": "Weird Cylinder Hoodie (Grey)",
-        "description": "Warm and cozy Weird Cylinder hoodie",
+        "description": "hoodie",
         "price": 20.00,
         "category": 6,
         "rating": 4.5,
@@ -100,7 +100,7 @@
     "fields": {
         "sku": "pp5002690715",
         "name": "Weird Cylinder Hoodie (White)",
-        "description": "Warm and cozy Weird Cylinder hoodie",
+        "description": "hoodie",
         "price": 20.00,
         "category": 6,
         "rating": 4.7,
@@ -112,7 +112,7 @@
     "fields": {
         "sku": "pp5002701115",
         "name": "Weird Cylinder Hoodie (Red)",
-        "description": "Warm and cozy Weird Cylinder hoodie",
+        "description": "hoodie",
         "price": 20.00,
         "category": 6,
         "rating": 4.4,
