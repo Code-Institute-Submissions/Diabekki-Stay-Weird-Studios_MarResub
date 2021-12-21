@@ -16,11 +16,12 @@
                 Clothing Merch
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Hoodies</a>
-                <a href="" class="dropdown-item">Tshirts</a>
-                <a href="" class="dropdown-item">Tanks</a>
-                <a href="" class="dropdown-item">Miscellaneous</a>
-                <a href="" class="dropdown-item">All Clothing Merch</a>
+                <a href="{% url 'merchandise' %}?category=hoodies" class="dropdown-item">Hoodies</a>
+                <a href="{% url 'merchandise' %}?category=tshirts" class="dropdown-item">Tshirts</a>
+                <a href="{% url 'merchandise' %}?category=tanks" class="dropdown-item">Tanks</a>
+                <a href="{% url 'merchandise' %}?category=caps" class="dropdown-item">Caps</a>
+                <a href="{% url 'merchandise' %}?category=bags" class="dropdown-item">Bags</a>
+                <a href="{% url 'merchandise' %}?category=hoodies,tshirts,tanks,caps,bags" class="dropdown-item">All Clothing Merch</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -29,7 +30,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cd-link">
                 <a href="" class="dropdown-item">Individual Tracks</a>
-                <a href="" class="dropdown-item">Album</a>
+                <a href="{% url 'merchandise' %}?category=album" class="dropdown-item">Album</a>
                 <a href="" class="dropdown-item">All Content</a>
             </div>
         </li>

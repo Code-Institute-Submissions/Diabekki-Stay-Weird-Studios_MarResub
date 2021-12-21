@@ -23,8 +23,8 @@
     "pk": 5,
     "model": "merchandise.category",
     "fields": {
-        "name": "miscellaneous",
-        "friendly_name": "Miscellaneous"
+        "name": "bags",
+        "friendly_name": "Bags"
     }
 }, {
     "pk": 6,
@@ -37,8 +37,8 @@
     "pk": 8,
     "model": "merchandise.category",
     "fields": {
-        "name": "new_arrivals",
-        "friendly_name": "New Arrivals"
+        "name": "caps",
+        "friendly_name": "Caps"
     }
 }, {
     "pk": 9,
