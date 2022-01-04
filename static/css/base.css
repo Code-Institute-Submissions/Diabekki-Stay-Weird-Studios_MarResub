@@ -66,6 +66,11 @@ body {
     z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+    background: rgb(65, 0, 0) !important;
+    color: white !important;
+}
+
 
 
 /* -------------------------------- Media Queries */

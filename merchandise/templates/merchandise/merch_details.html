@@ -30,6 +30,13 @@
                 <div class="merch-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ merch.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">${{ merch.price }}</p>
+                    {% if merch.category %}
+                    <p class="small mt-1 mb-0">
+                        <a class="text-muted" href="{% url 'merchandise' %}?category={{ merch.category.name }}">
+                            <i class="fas fa-tag mr-1"></i>{{ merch.category.friendly_name }}
+                        </a>
+                    </p>
+                    {% endif %}
                     {% if merch.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ merch.rating }} / 5</small>
                     {% else %}
