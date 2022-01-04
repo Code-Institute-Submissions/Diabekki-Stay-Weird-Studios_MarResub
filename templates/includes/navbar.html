@@ -5,9 +5,9 @@
                 All Merchandise
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-merchandise-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'merchandise' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'merchandise' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'merchandise' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'merchandise' %}" class="dropdown-item">All Merchandise</a>
             </div>
         </li>

@@ -12,6 +12,22 @@ def all_merchandise(request):
     merchandise = Merch.objects.all()
     query = None
     categories = None
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                merchandise = merchandise.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            merchandise = merchandise.order_by(sortkey)
 
     if request.GET:
         if 'category' in request.GET:
@@ -28,11 +44,14 @@ def all_merchandise(request):
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             merchandise = merchandise.filter(queries)
+    
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'merchandise': merchandise,
         'search_term': query,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'merchandise/merchandise.html', context)

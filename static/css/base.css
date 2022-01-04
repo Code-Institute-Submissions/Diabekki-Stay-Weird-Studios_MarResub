@@ -52,6 +52,10 @@ body {
     color: rgb(255, 255, 255) !important;
 }
 
+.text-muted {
+    color: #000000!important;
+}
+
 .overlay-merch {
     height: 100%;
     width: 100%;
