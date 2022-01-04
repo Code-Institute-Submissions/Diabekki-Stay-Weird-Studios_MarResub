@@ -17,12 +17,12 @@
             {% if cart_items %}
                 <div class="table-responsive rounded"></div>
             {% else %}
-                <p class="lead mb-5">Your shopping cart is empty.</p>
-                <a href="{% url 'merchandise' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <p class="lead mb-12">Your shopping cart is empty.</p>
+                <a href="{% url 'merchandise' %}" class="btn btn-outline-white rounded-0 btn-lg">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>
-                    <span class="text-uppercase">Keep Shopping</span>
+                    <span class="text-uppercase text-white">Keep Shopping</span>
                 </a>
             {% endif %}
         </div>
