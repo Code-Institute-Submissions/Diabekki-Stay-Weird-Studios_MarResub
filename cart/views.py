@@ -23,6 +23,5 @@ def shopping_cart_quantity(request, merch_id):
         cart[merch_id] = quantity
 
         request.session['cart'] = cart
-        print(request.session['cart'])
         return redirect(redirect_url)
 
