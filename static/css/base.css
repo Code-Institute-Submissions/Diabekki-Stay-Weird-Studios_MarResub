@@ -38,6 +38,12 @@ body {
     color: rgb(255, 255, 255);
 }
 
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    border: 1px solid black;
+}
+
 .services-button:hover,
 .services-button:active,
 .services-button:focus,
