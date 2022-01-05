@@ -11,15 +11,28 @@ def cart_items(request):
     cart = request.session.get('cart', {})
 
 
-    for merch_id, quantity in cart.items():
-        merch = get_object_or_404(Merch, pk=merch_id)
-        total += quantity * merch.price
-        merch_count += quantity
-        cart_items.append({
-            'merch_id': merch_id,
-            'quantity': quantity,
-            'merch': merch,
-        })
+    for merch_id, merch_data in cart.items():
+        if isinstance(merch_data, int):
+            merch = get_object_or_404(Merch, pk=merch_id)
+            total += merch_data * merch.price
+            merch_count += merch_data
+            cart_items.append({
+                'merch_id': merch_id,
+                'quantity': merch_data,
+                'merch': merch,
+            })
+        else:
+            merch = get_object_or_404(Merch, pk=merch_id)
+            for clothing_size, quantity in merch_data['item_size'].items():
+                total += quantity * merch.price
+                merch_count += quantity
+                cart_items.append({
+                    'merch_id': merch_id,
+                    'quantity': quantity,
+                    'merch': merch,
+                    'clothing_size': clothing_size
+                })
+
 
     if total:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
