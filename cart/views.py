@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import (render, redirect, reverse, HttpResponse, get_object_or_404)
+from django.contrib import messages
 
-
+from merchandise.models import Merch
 # Create your views here.
 
 
@@ -13,11 +14,12 @@ def view_cart(request):
 def shopping_cart_quantity(request, merch_id):
     """ Number of items added to shopping cart """
 
+    merch = get_object_or_404(Merch, pk=merch_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     clothing_size = None
-    if 'item_size' in request.POST:
-        clothing_size = request.POST['item_size']
+    if 'merch_size' in request.POST:
+        clothing_size = request.POST['merch_size']
     cart = request.session.get('cart', {})
 
     if clothing_size:
