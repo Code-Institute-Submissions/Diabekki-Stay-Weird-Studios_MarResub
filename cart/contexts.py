@@ -11,7 +11,6 @@ def cart_items(request):
     cart = request.session.get('cart', {})
 
     for merch_id, merch_data in cart.items():
-        print(merch_data)
         if isinstance(merch_data, int):
             merch = get_object_or_404(Merch, pk=merch_id)
             total += merch_data * merch.price

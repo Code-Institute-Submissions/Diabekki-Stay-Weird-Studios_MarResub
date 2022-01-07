@@ -24,7 +24,7 @@ def shopping_cart_quantity(request, merch_id):
 
     if clothing_size:
         if merch_id in list(cart.keys()):
-            if clothing_size in cart['item_size'].keys():
+            if clothing_size in cart[merch_id]['item_size'].keys():
                 cart[merch_id]['item_size'][clothing_size] += quantity
             else:
                 cart[merch_id]['item_size'][clothing_size] = quantity

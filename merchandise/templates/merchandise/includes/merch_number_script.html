@@ -6,7 +6,7 @@
     * which prevents any errors 
     */
     function handleEnableDisable(merchId, clothing_size) {
-        if (size) {
+        if (clothing_size) {
             var currentValue = parseInt($(`.clothing_size_${merchId}_${clothing_size}`).val());
         } else {
             var currentValue = parseInt($(`.id_qty_${merchId}`).val());
@@ -15,40 +15,40 @@
         var minusDisabled = currentValue < 2;
         var plusDisabled = currentValue > 98;
 
-        if (size) {
-            $(`.decrement-size_${itemId}_${size}`).prop('disabled', minusDisabled);
-            $(`.increment-size_${itemId}_${size}`).prop('disabled', plusDisabled);
+        if (clothing_size) {
+            $(`.decrement-size_${merchId}_${clothing_size}`).prop('disabled', minusDisabled);
+            $(`.increment-size_${merchId}_${clothing_size}`).prop('disabled', plusDisabled);
         } else {
-            $(`.decrement-qty_${itemId}`).prop('disabled', minusDisabled);
-            $(`.increment-qty_${itemId}`).prop('disabled', plusDisabled);
+            $(`.decrement-qty_${merchId}`).prop('disabled', minusDisabled);
+            $(`.increment-qty_${merchId}`).prop('disabled', plusDisabled);
         }
     }
 
     // Ensure proper enabling/disabling of all inputs on page load
     var allQtyInputs = $('.qty_input');
     for(var i = 0; i < allQtyInputs.length; i++){
-        var itemId = $(allQtyInputs[i]).data('merch_id');
-        var size = $(allQtyInputs[i]).data('clothing_size');
-        handleEnableDisable(itemId, size);
+        var merchId = $(allQtyInputs[i]).data('merch_id');
+        var clothing_size = $(allQtyInputs[i]).data('clothing_size');
+        handleEnableDisable(merchId, clothing_size);
     }
 
     // Check enable/disable every time the input is changed
     $('.qty_input').change(function() {
-        var itemId = $(this).data('merch_id');
-        var size = $(this).data('clothing_size');
-        handleEnableDisable(itemId, size);
+        var merchId = $(this).data('merch_id');
+        var clothing_size = $(this).data('clothing_size');
+        handleEnableDisable(merchId, clothing_size);
     });
 
     // Increment quantity
     $('.increment-qty').click(function(e) {
        e.preventDefault();
-       var itemId = $(this).data('merch_id');
-       var size = $(this).data('clothing_size');
+       var merchId = $(this).data('merch_id');
+       var clothing_size = $(this).data('clothing_size');
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-       if (size) {
-          var allQuantityInputs = $(`.input-group-${itemId} input[data-size='${clothing_size}']`);
+       if (clothing_size) {
+          var allQuantityInputs = $(`.input-group-${merchId} input[data-size='${clothing_size}']`);
        } else {
-          var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
+          var allQuantityInputs = $(`.input-group-${merchId} input[name='quantity']`);
        }
        var currentValue = parseInt($(closestInput).val());
        $(allQuantityInputs).val(currentValue + 1);
@@ -58,13 +58,13 @@
     // Decrement quantity
     $('.decrement-qty').click(function(e) {
        e.preventDefault();
-       var itemId = $(this).data('merch_id');
-       var size = $(this).data('clothing_size');
+       var merchId = $(this).data('merch_id');
+       var clothing_size = $(this).data('clothing_size');
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-       if (size) {
-          var allQuantityInputs = $(`.input-group-${itemId} input[data-size='${clothing_size}']`);
+       if (clothing_size) {
+          var allQuantityInputs = $(`.input-group-${merchId} input[data-size='${clothing_size}']`);
        } else {
-          var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
+          var allQuantityInputs = $(`.input-group-${merchId} input[name='quantity']`);
        }
        var currentValue = parseInt($(closestInput).val());
        $(allQuantityInputs).val(currentValue - 1);
