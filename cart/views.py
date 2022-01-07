@@ -14,6 +14,7 @@ def view_cart(request):
 def shopping_cart_quantity(request, merch_id):
     """ Number of items added to shopping cart """
 
+    merch = Merch.objects.get(pk=merch_id)
     merch = get_object_or_404(Merch, pk=merch_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -35,6 +36,7 @@ def shopping_cart_quantity(request, merch_id):
             cart[merch_id] += quantity
         else: 
             cart[merch_id] = quantity
+            messages.success(request, f'Added {merch.name} to shopping cart!')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
