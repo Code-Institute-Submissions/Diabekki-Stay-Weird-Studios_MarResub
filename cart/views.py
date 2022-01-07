@@ -39,3 +39,49 @@ def shopping_cart_quantity(request, merch_id):
     request.session['cart'] = cart
     return redirect(redirect_url)
 
+
+def change_cart(request, merch_id):
+    """ Changes number of items in shopping cart """
+
+    quantity = int(request.POST.get('quantity'))
+    clothing_size = None
+    if 'merch_size' in request.POST:
+        clothing_size = request.POST['merch_size']
+    cart = request.session.get('cart', {})
+
+    if clothing_size:
+        if quantity > 0:
+            cart[merch_id]['item_size'][clothing_size] = quantity
+        else:
+            del cart[merch_id]['item_size'][clothing_size]
+            if not cart[merch_id]['item_size'][clothing_size]:
+                cart.pop(merch_id)
+    else:
+        if quantity > 0:
+            cart[merch_id] = quantity
+        else:
+            cart.pop(merch_id)
+
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
+
+
+def remove_merch(request, merch_id):
+    """ Removes items from shopping cart """
+    try:
+        clothing_size = None
+        if 'merch_size' in request.POST:
+            clothing_size = request.POST['merch_size']
+            cart = request.session.get('cart', {})
+            
+        if clothing_size:
+            del cart[merch_id]['item_size'][clothing_size]
+            if not cart[merch_id]['item_size'][clothing_size]:
+                cart.pop(merch_id)
+        else:
+            cart.pop(merch_id)
+
+        request.session['cart'] = cart
+        return HttpResponse(status=200)
+    except Exception as e:
+        return HttpResponse(status=200)
