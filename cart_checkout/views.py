@@ -26,7 +26,7 @@ def cart_checkout(request):
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
         }
-        purchase_form = purchase_form(form_data)
+        purchase_form = PurchaseForm(form_data)
         if purchase_form.is_valid():
             purchase = purchase_form.save()
             for merch_id, merch_data in cart.items():
@@ -57,7 +57,7 @@ def cart_checkout(request):
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[purchase.purchase_number]))
+            return redirect(reverse('cart_checkout_success', args=[purchase.purchase_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -92,14 +92,14 @@ def cart_checkout(request):
     return render(request, template, context)
 
 
-def cart_checkout_success(request, order_number):
+def cart_checkout_success(request, purchase_number):
     """
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
     purchase = get_object_or_404(Purchase, purchase_number=purchase_number)
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {purchase_number}. A confirmation \
+    messages.success(request, f'Purchase successfully processed! \
+        Your purchase number is {purchase_number}. A confirmation \
         email will be sent to {purchase.email}.')
 
     if 'cart' in request.session:
