@@ -148,7 +148,7 @@
         var csrfToken = "{{ csrf_token }}";
         var merchId = $(this).attr('id').split('remove_')[1];
         var clothingSize = $(this).data('merch_size');
-        var url = `/bag/remove/${merchId}/`;
+        var url = `/cart/remove/${merchId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'merch_size': clothing_size};
 
         $.post(url, data)
