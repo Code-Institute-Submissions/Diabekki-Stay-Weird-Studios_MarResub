@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
@@ -8,6 +9,25 @@ from merchandise.models import Merch
 from cart.contexts import cart_items
 
 import stripe
+import json
+
+
+@require_POST
+def cache_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, ('Sorry, your payment cannot be '
+                                 'processed right now. Please try '
+                                 'again.'))
+        return HttpResponse(content=e, status=400)
 
 
 def cart_checkout(request):
@@ -28,7 +48,11 @@ def cart_checkout(request):
         }
         purchase_form = PurchaseForm(form_data)
         if purchase_form.is_valid():
-            purchase = purchase_form.save()
+            purchase = purchase_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            purchase.stripe_pid = pid
+            purchase.original_cart = json.dumps(cart)
+            purchase.save()
             for merch_id, merch_data in cart.items():
                 try:
                     merch = Merch.objects.get(id=merch_id)
