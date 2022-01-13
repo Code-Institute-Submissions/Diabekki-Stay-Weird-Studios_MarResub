@@ -1,5 +1,8 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
+from django.conf import settings
 from .models import Purchase, PurchaseLineItem
 from merchandise.models import Merch
 from user_profiles.models import UserProfile
@@ -14,6 +17,23 @@ class StripeWH_Handler:
     def __init__(self, request):
         self.request = request
 
+    def confirmation_email(self, purchase):
+        """Send the user a confirmation email"""
+        customer_email = purchase.email
+        sub = render_to_string(
+            'cart_checkout/confirm_email/confirmation_email_sub.txt',
+            {'purchase': purchase})
+        body = render_to_string(
+            'cart_checkout/confirm_email/confirmation_email_body.txt',
+            {'purchase': purchase, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+        send_mail(
+            sub,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [customer_email]
+        )
+
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
@@ -26,6 +46,7 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
+        intent = event.data.object
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
@@ -74,7 +95,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if purchase_exsits:
-            self._send_confirmation_email(purchase)
+            self.confirmation_email(purchase)
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | SUCCESS: '
                          'Verified purchase already in database'),
@@ -118,7 +139,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        self._send_confirmation_email(purchase)
+        self.confirmation_email(purchase)
         return HttpResponse(
             content=(f'Webhook received: {event["type"]} | SUCCESS: '
                      'Created purchase in webhook'),

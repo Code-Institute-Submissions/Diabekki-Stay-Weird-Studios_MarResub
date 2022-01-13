@@ -1,0 +1,22 @@
+Hello {{ purchase.full_name }}!
+
+This is a confirmation of your merch purchase at Stay Weird Studios. Your purchase information is below:
+
+Purchase Number: {{ purchase.purchase_number }}
+Purchase Date: {{ purchase.date }}
+
+Purchase Total: ${{ purchase.purchase_total }}
+Delivery: ${{ purchase.delivery_cost }}
+Grand Total: ${{ purchase.grand_total }}
+
+Your purchase will be shipped to {{ purchase.street_address1 }} in {{ purchase.town_or_city }}, {{ purchase.country }}.
+
+We've got your phone number on file as {{ purchase.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Stay Werid! :)
+
+Sincerely,
+
+Stay Weird Studios
