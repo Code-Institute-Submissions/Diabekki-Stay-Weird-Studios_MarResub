@@ -1,10 +1,8 @@
 from django.http import HttpResponse
 
-from django.template.loader import render_to_string
-from django.conf import settings
-
 from .models import Purchase, PurchaseLineItem
 from merchandise.models import Merch
+from user_profiles.models import UserProfile
 
 import json
 import time
@@ -86,7 +84,7 @@ class StripeWH_Handler:
             try:
                 purchase = Purchase.objects.create(
                     full_name=shipping_details.name,
-                    user_profiles=user,
+                    user_profile=user,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
