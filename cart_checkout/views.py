@@ -6,6 +6,8 @@ from django.conf import settings
 from .forms import PurchaseForm
 from .models import Purchase, PurchaseLineItem
 from merchandise.models import Merch
+from user_profiles.forms import UserProfileForm
+from user_profiles.models import UserProfile
 from cart.contexts import cart_items
 
 import stripe
@@ -100,7 +102,24 @@ def cart_checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        purchase_form = PurchaseForm()
+        # Attempt to prefill the form with any info
+        # the user maintains in their profile
+        if request.user.is_authenticated:
+            try:
+                user = UserProfile.objects.get(user=request.user)
+                purchase_form = PurchaseForm(initial={
+                    'full_name': user.user.get_full_name(),
+                    'email': user.user.email,
+                    'phone_number': user.default_phone_number,
+                    'country': user.default_country,
+                    'town_or_city': user.default_town_or_city,
+                    'street_address1': user.default_street_address1,
+                    'street_address2': user.default_street_address2,
+                })
+            except UserProfile.DoesNotExist:
+                purchase_form = PurchaseForm()
+        else:
+            purchase_form = PurchaseForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -122,8 +141,28 @@ def cart_checkout_success(request, purchase_number):
     """
     save_info = request.session.get('save_info')
     purchase = get_object_or_404(Purchase, purchase_number=purchase_number)
-    messages.success(request, f'Purchase successfully processed! \
-        Your purchase number is {purchase_number}. A confirmation \
+
+    if request.user.is_authenticated:
+        user = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        purchase.user_profile = user
+        purchase.save()
+
+        # Save the user's info
+        if save_info:
+            user_data = {
+                'default_phone_number': purchase.phone_number,
+                'default_country': purchase.country,
+                'default_town_or_city': purchase.town_or_city,
+                'default_street_address1': purchase.street_address1,
+                'default_street_address2': purchase.street_address2,
+            }
+            user_profile_form = UserProfileForm(user_data, instance=user)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {purchase_number}. A confirmation \
         email will be sent to {purchase.email}.')
 
     if 'cart' in request.session:

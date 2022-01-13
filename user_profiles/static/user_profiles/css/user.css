@@ -7,7 +7,7 @@
 }
 
 .purchase-history {
-    max-height: 416px; /* height of profile form + submit button */
+    max-height: 416px; /* height of user form + submit button */
     overflow-y: auto;
 }
 

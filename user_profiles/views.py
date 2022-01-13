@@ -28,3 +28,19 @@ def user(request):
     }
         
     return render(request, template, context)
+
+def purchase_history(request, purchase_number):
+    purchase = get_object_or_404(Purchase, purchase_number=purchase_number)
+
+    messages.info(request, (
+        f'This is a past confirmation for purchase number {purchase_number}. '
+        'A confirmation email was sent on the purchase date.'
+    ))
+
+    template = 'cart_checkout/cart_checkout_success.html'
+    context = {
+        'purchase': purchase,
+        'from_user': True,
+    }
+
+    return render(request, template, context)
