@@ -1,7 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from .models import UserProfile
 
 def user(request):
-    template = 'user_profiles/user.html'
-    context = {}
 
-    return render(request,template, context)
+    profile = get_object_or_404(UserProfile, user=request.user)
+    template = 'user_profiles/user.html'
+    context = {
+        'user': user,
+    }
+
+    return render(request, template, context)
