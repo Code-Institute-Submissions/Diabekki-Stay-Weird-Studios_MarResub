@@ -23,5 +23,60 @@
                 <hr>
             </div>
         </div>
-        {{ user }}   
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p class="text-white">Default Delivery Information</p>
+                <form class="mt-3" action="{% url 'user' %}" method="POST" id="user-update-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="text-white">Purchase History</p>
+                <div class="Purchase-history table-responsive">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Purchase Number</th>
+                                <th>Date</th>
+                                <th>Merchandise</th>
+                                <th>Purchase Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for purchase in purchases %}
+                                <tr>
+                                    <td>
+                                        <a href=""
+                                        title="{{ purchase.purchase_number }}">
+                                            {{ purchase.purchase_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ purchase.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in purchase.lineitems.all %}
+                                                <li class="small">
+                                                    {% if item.merch.has_sizes %}
+                                                        ClothingSize {{ item.merch.size|upper }}
+                                                    {% endif %}{{ item.merch.name }} x{{ item.quantity }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>${{ purchase.grand_total }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'user_profiles/js/countryfield.js' %}"></script>
 {% endblock %}
