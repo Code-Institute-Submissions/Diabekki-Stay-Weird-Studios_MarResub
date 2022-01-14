@@ -8,7 +8,7 @@ from cart_checkout.models import Purchase
 
 
 def user(request):
-
+    
     user = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -16,8 +16,10 @@ def user(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
-
-    form = UserProfileForm(instance=user)
+        else:
+            messages.error(request, 'Update failed. Please check form is valid.')
+    else:
+        form = UserProfileForm(instance=user)
     purchases = user.purchases.all()
 
     template = 'user_profiles/user.html'
