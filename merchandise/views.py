@@ -92,3 +92,27 @@ def add_merch(request):
     }
 
     return render(request, template, context)
+
+
+def edit_merch(request, merch_id):
+    """ Edit merchandise in the store """
+    merch = get_object_or_404(Merch, pk=merch_id)
+    if request.method == 'POST':
+        form = MerchForm(request.POST, request.FILES, instance=merch)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated merchandise!')
+            return redirect(reverse('merch_details', args=[merch.id]))
+        else:
+            messages.error(request, 'Failed to update merchandise. Please ensure the form is valid.')
+    else:
+        form = MerchForm(instance=merch)
+        messages.info(request, f'You are editing {merch.name}')
+
+    template = 'merchandise/edit_merch.html'
+    context = {
+        'form': form,
+        'merch': merch,
+    }
+
+    return render(request, template, context)
