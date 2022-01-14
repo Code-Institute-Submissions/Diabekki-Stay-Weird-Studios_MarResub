@@ -72,15 +72,21 @@
                                             <p class="lead mb-0 text-left font-weight-bold">${{ merch.price }}</p>
                                             {% if merch.category %}
                                             <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'merchandise' %}?category={{ merch.category.name }}">
+                                                <a class="text-white" href="{% url 'merchandise' %}?category={{ merch.category.name }}">
                                                     <i class="fas fa-tag mr-1"></i>{{ merch.category.friendly_name }}
                                                 </a>
                                             </p>
                                             {% endif %}
                                             {% if merch.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ merch.rating }} / 5</small>
+                                                <small class="text-white"><i class="fas fa-star mr-1"></i>{{ merch.rating }} / 5</small>
                                             {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                                <small class="text-white">No Rating</small>
+                                            {% endif %}
+                                            {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_merch' merch.id %}">Edit</a>
+                                                    <a classm="text-danger" href="{% url 'delete_merch' merch.id %}">Delete</a>
+                                                </small>
                                             {% endif %}
                                         </div>
                                     </div>

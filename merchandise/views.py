@@ -78,9 +78,9 @@ def add_merch(request):
     if request.method == 'POST':
         form = MerchForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            merch = form.save()
             messages.success(request, 'Successfully added merchandise!')
-            return redirect(reverse('add_merch'))
+            return redirect(reverse('merch_details', args=[merch.id]))
         else:
             messages.error(request, 'Failed to add merchandise. Please ensure the form is valid.')
     else:
@@ -116,3 +116,11 @@ def edit_merch(request, merch_id):
     }
 
     return render(request, template, context)
+
+
+def delete_merch(request, merch_id):
+    """ Delete merchandise from the store """
+    merch = get_object_or_404(Merch, pk=merch_id)
+    merch.delete()
+    messages.success(request, 'Merchandise deleted!')
+    return redirect(reverse('merchandise'))
