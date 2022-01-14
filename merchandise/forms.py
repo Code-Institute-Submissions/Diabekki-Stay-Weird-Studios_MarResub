@@ -1,4 +1,5 @@
 from django import forms
+from .widgets import CustomClearFileInput
 from .models import Merch, Category 
 
 class MerchForm(forms.ModelForm):
@@ -6,6 +7,8 @@ class MerchForm(forms.ModelForm):
     class Meta:
         model = Merch
         fields = '__all__'
+
+    image = forms.ImageField(label='image', required=False, widget=CustomClearFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
