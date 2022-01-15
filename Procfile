@@ -1,0 +1,1 @@
+web: gunicorn stay_weird_studios.wsgi:application
