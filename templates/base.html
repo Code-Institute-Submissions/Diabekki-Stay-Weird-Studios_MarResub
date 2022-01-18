@@ -49,7 +49,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'merchandise' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search for merch or services">
+                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search for merch">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                                 <span class="icon">
@@ -72,7 +72,7 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_merch' %}" class="dropdown-item">Services/Merchandise Management</a>
+                                    <a href="{% url 'add_merch' %}" class="dropdown-item">Merchandise Management</a>
                                 {% endif %}
                                 <a href="{% url 'user' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>

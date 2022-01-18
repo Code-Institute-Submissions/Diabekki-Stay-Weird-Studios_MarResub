@@ -27,7 +27,7 @@ body {
     width: fit-content;
 }
 
-.services-button {
+.merchandise-button {
     background: black;
     color: white;
     min-width: 260px;
@@ -44,9 +44,9 @@ body {
     border: 1px solid black;
 }
 
-.services-button:hover,
-.services-button:active,
-.services-button:focus,
+.merchandise-button:hover,
+.merchandise-button:active,
+.merchandise-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
@@ -55,7 +55,7 @@ body {
 }
 
 .text-black {
-    color: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 .text-muted {
@@ -157,7 +157,7 @@ input[name='q']::placeholder {
     border-bottom-color: #343a40 !important;
 }
 
-.bag-notification-wrapper {
+.cart-notification {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
