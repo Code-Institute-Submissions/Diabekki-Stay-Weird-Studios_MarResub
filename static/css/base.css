@@ -10,7 +10,12 @@ body {
     font-family: 'Lato';
 }
 
-/* from Bulma */
+#topnav {
+    background: #900000;
+}
+
+
+
 .icon {
     align-items: center;
     display: inline-flex;
@@ -28,13 +33,25 @@ body {
 }
 
 .merchandise-button {
-    background: black;
+    background: #000000;
     color: white;
-    min-width: 260px;
+    min-width: 100%;
+    font-size: 2rem;
 }
 
-.btn-black {
-    background: black;
+.merchandise-button:hover,
+.merchandise-button:active,
+.merchandise-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #900000;
+    color: rgb(255, 255, 255);
+}
+
+
+.btn-search {
+    background: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
 }
 
@@ -44,22 +61,12 @@ body {
     border: 1px solid black;
 }
 
-.merchandise-button:hover,
-.merchandise-button:active,
-.merchandise-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: rgb(255, 255, 255);
-}
-
-.text-black {
-    color: rgb(0, 0, 0) !important;
+.text-white {
+    color: rgb(255, 255, 255) !important;
 }
 
 .text-muted {
-    color: #000000!important;
+    color: #ffffff!important;
 }
 
 .overlay-merch {
