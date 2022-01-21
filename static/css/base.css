@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/speakers_homepage_image.jpg') no-repeat center center fixed;
+    background: url('/media/microphone.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: rgb(0, 0, 0);
@@ -14,7 +14,15 @@ body {
     background: #900000;
 }
 
-
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: rgba(230, 30, 30, 0.377);
+	z-index: -1;
+}
 
 .icon {
     align-items: center;
@@ -33,7 +41,7 @@ body {
 }
 
 .merchandise-button {
-    background: #000000;
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
     color: white;
     min-width: 100%;
     font-size: 2rem;
@@ -45,7 +53,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #900000;
+    background: linear-gradient(0.25turn, #bd0101, #9b3782, #bd0101);
     color: rgb(255, 255, 255);
 }
 
@@ -75,9 +83,9 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: rgb(145, 19, 19);
+    background: rgba(145, 19, 19, 0.219);
     z-index: -1;
-}
+} 
 
 a.category-badge > span.badge:hover {
     background: rgb(65, 0, 0) !important;
@@ -357,3 +365,6 @@ select option[value=""] {
           height: calc(100vh - 116px);
       }
   }
+
+  /* CSS override
+

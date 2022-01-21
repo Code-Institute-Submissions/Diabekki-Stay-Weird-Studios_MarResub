@@ -38,9 +38,9 @@
                 </p>
                 {% endif %}
                 {% if merch.rating %}
-                <small class="text-white"><i class="fas fa-star mr-1"></i>{{ merch.rating }} / 5</small>
+                <small class="text-dark"><i class="fas fa-star mr-1"></i>{{ merch.rating }} / 5</small>
                 {% else %}
-                <small class="text-white">No Rating</small>
+                <small class="text-dark">No Rating</small>
                 {% endif %}
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
