@@ -12,7 +12,7 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row text-white">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if merch.image %}
@@ -38,9 +38,9 @@
                 </p>
                 {% endif %}
                 {% if merch.rating %}
-                <small class="text-dark"><i class="fas fa-star mr-1"></i>{{ merch.rating }} / 5</small>
+                <small class="text-white"><i class="fas fa-star mr-1"></i>{{ merch.rating }} / 5</small>
                 {% else %}
-                <small class="text-dark">No Rating</small>
+                <small class="text-white">No Rating</small>
                 {% endif %}
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
@@ -48,7 +48,12 @@
                         <a classm="text-danger" href="{% url 'delete_merch' merch.id %}">Delete</a>
                     </small>
                 {% endif %}
+                <!-- <iframe src="https://open.spotify.com/embed/album/2O619TMmH89ZWugaL99nzl?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> -->
+                {% if merch.category.name == 'album' %}
+                <iframe src="https://open.spotify.com/embed/album/2O619TMmH89ZWugaL99nzl?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                {% else %}
                 <p class="mt-3">{{ merch.description }}</p>
+                {% endif %}
                 <form class="form" action="{% url 'shopping_cart_quantity' merch.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -100,7 +105,7 @@
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="shopping_cart_quantity">
+                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endwith %}

@@ -57,6 +57,18 @@ body {
     color: rgb(255, 255, 255);
 }
 
+a {
+    color: #900000;
+}
+
+a:hover {
+    color: #9b3782;
+}
+
+.merch-home {
+    font-size: 1.5rem;
+    
+}
 
 .btn-search {
     background: rgb(0, 0, 0);
@@ -78,13 +90,16 @@ body {
 }
 
 .contact-link {
-    font-size: 2rem;
-    text-align: center;
-    padding-left: 160px;
+    font-size: 1rem;
+    text-align: end;
     padding-top: 10px;
+    padding-right: 10%;
+    text-decoration: underline;
 }
 
-
+.follow-text {
+    font-size: 1rem;
+}
 
 .overlay-merch {
     height: 100%;
@@ -318,7 +333,7 @@ select option[value=""] {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #ffffff; /* text-info */
 }
 
 /* Product Form */

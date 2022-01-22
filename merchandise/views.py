@@ -65,11 +65,13 @@ def merch_details(request, merch_id):
     """ A view to show details of picked merchandise """
 
     merch = get_object_or_404(Merch, pk=merch_id)
-
+    merch_category = merch.category
     context = {
         'merch': merch,
-    }
+        'merch_category': merch_category,
 
+    }
+    print(merch.category)
     return render(request, 'merchandise/merch_details.html', context)
 
 

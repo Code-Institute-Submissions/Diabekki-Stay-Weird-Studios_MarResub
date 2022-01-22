@@ -28,4 +28,5 @@ class Merch(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        # return self.name
+        return f"The category of {self.name} is {self.category}"
