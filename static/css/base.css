@@ -11,7 +11,7 @@ body {
 }
 
 #topnav {
-    background: #900000;
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
 }
 
 .overlay {
@@ -76,6 +76,15 @@ body {
 .text-muted {
     color: #ffffff!important;
 }
+
+.contact-link {
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 160px;
+    padding-top: 10px;
+}
+
+
 
 .overlay-merch {
     height: 100%;

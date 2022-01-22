@@ -146,7 +146,7 @@
     {% block content %}
     {% endblock %}
         <!-- Footer -->
-        <footer class="text-center text-lg-start text-white" style="background-color: #900000">
+        <footer class="text-center text-lg-start text-white" style="background: linear-gradient(0.25turn, #900000, #6A2659, #900000);">
             <!-- Grid container -->
             <div class="container p-0 pb-0">
                 <!--Grid row-->
@@ -161,7 +161,11 @@
                         <p><i class="fas fa-home mr-3"></i> Limerick City, Ireland</p>
                         <p><i class="fas fa-envelope mr-3"></i> stay-weird-studios@gmail.com</p>
                     </div>
-                
+                    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                        <a class="text-white nav-link" href="{% url 'contact_form' %}">
+                        <p class="contact-link">Contact Us!</p>
+                        </a>
+                    </div>
                     <div class="col-md-3 col-lg-2 col-xl-5 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Follow us!</h6>
 
