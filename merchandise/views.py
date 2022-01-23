@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from django.contrib.auth.decorators import login_required
-from .models import Merch, Category
-from .forms import MerchForm
+from django.views import View
+from .models import Merch, Category, Comment
+from .forms import MerchForm, CommentForm
 
 # Create your views here.
 
@@ -33,12 +35,10 @@ def all_merchandise(request):
                     sortkey = f'-{sortkey}'
             merchandise = merchandise.order_by(sortkey)
 
-
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             merchandise = merchandise.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -66,12 +66,28 @@ def merch_details(request, merch_id):
 
     merch = get_object_or_404(Merch, pk=merch_id)
     merch_category = merch.category
+    
+    # comments = Comment.objects.all().filter(merch__name=merch)
+    comments = merch.comment.filter(approved=True)
+    comment_form = CommentForm()
+    if request.user.is_authenticated:
+        username = User.objects.get(username=request.user)
+    else:	
+        username = ''
+
+    if request.method == 'POST' and request.user.is_authenticated:
+        name = request.POST.get('name', username)
+        email = request.POST.get('email', '')
+        message = request.POST.get('message', '')
+        comment = Comment.objects.create(merch=merch, name=name, email=email, message=message)
+
     context = {
         'merch': merch,
         'merch_category': merch_category,
-
+        'comments': comments,
+        'comment_form': comment_form,
     }
-    print(merch.category)
+
     return render(request, 'merchandise/merch_details.html', context)
 
 

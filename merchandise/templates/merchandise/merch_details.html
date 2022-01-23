@@ -115,6 +115,51 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row comment-body">
+        <div class="col-md-8 card mb-5 mt-5" style="background-color: rgba(114, 0, 0, 0.288);">
+            <h3 class="text-white">Comments:</h3>
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags to iterate through each review in reviews -->
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px, text-white">
+                    <p class="font-weight-bold">
+                        <!-- The reviewers's name goes here. Check the model if you're not sure what that is -->
+                        {{ comment.name }}
+                        <span class="font-weight-normal">
+                            <!-- The reviews created date goes here -->
+                            {{ comment.added_on }}
+                        </span>
+                    </p>
+                    <!-- The body of the review goes before the | -->
+                    <p id="comment-message">{{ comment.message}}</p>
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 card mb-5 mt-5" style="background-color: rgba(114, 0, 0, 0.288);">
+            <div class="card-body">
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}    
+                <h3 class="text-white">Comment:</h3>
+                <p class="text-white">Posting as: {{ user.username }}</p>
+                <form method="POST" style="margin-top: 1.3em;" action="">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg" 
+                    style="background: linear-gradient(0.25turn, #900000, #6A2659, #900000);">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}

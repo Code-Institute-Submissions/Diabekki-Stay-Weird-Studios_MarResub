@@ -10,6 +10,10 @@ body {
     font-family: 'Lato';
 }
 
+.text-white {
+    color: rgb(255, 255, 255) !important;
+}
+
 #topnav {
     background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
 }
@@ -77,14 +81,31 @@ a:hover {
 
 .btn-outline-black {
     background: white;
-    color: black !important;
+    color: rgb(2, 2, 2) !important;
     border: 1px solid black;
 }
 
-.text-white {
-    color: rgb(255, 255, 255) !important;
+/* comment section */
+
+.comment-body {
+    width: 100%;
 }
 
+
+.btn {
+    color: #ffffff;
+}
+
+#div_id_message {
+    color: #f8f9fa;
+}
+
+.btn:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(0.25turn, #e90404, #be43a0, #d80000);
+}
+ 
 .text-muted {
     color: #ffffff!important;
 }

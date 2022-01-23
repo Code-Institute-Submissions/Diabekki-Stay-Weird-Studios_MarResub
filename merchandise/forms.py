@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearFileInput
-from .models import Merch, Category 
+from .models import Merch, Category, Comment 
 
 class MerchForm(forms.ModelForm):
 
@@ -18,3 +18,9 @@ class MerchForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self .fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('message',)

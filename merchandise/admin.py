@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Merch, Category
+from .models import Merch, Category, Comment
 
 # Register your models here.
 
@@ -23,5 +23,17 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = (
+        'merch',
+        'name',
+        'email',
+        'message',
+        'added_on',
+        'approved',
+    )
+
+
+admin.site.register(Comment, CommentAdmin)
 admin.site.register(Merch, MerchAdmin)
 admin.site.register(Category, CategoryAdmin)

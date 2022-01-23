@@ -29,4 +29,19 @@ class Merch(models.Model):
 
     def __str__(self):
         # return self.name
-        return f"The category of {self.name} is {self.category}"
+        return f"The merch name is {self.name} and the category name is {self.category}"
+
+
+class Comment(models.Model):
+    merch = models.ForeignKey(Merch, on_delete=models.CASCADE, related_name="comment")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    message = models.TextField()
+    added_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["added_on"]
+
+    def __str__(self):
+        return f"{self.name} commented: {self.message} on the following merchandise: {self.merch}"

@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static '/workspace/Stay-Weird-Studios/contact/static/contact/css/contact.css' %}">
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'contact/css/contact.css' %}">
+{% endblock %}
+
 
 {% block page_header %}
 <div class="container header-container">
