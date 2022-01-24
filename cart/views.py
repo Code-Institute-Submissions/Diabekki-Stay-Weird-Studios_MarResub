@@ -80,6 +80,8 @@ def remove_merch(request, merch_id):
     """ Removes items from shopping cart """
     try:
         merch = get_object_or_404(Merch, pk=merch_id)
+        cart = request.session.get('cart', {})
+
         clothing_size = None
         if 'merch_size' in request.POST:
             clothing_size = request.POST['merch_size']
