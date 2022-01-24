@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('/media/microphone.jpg') no-repeat center center fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: auto;
+    padding: 5rem;
+    background: #331c57;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 4px 8px #705b92;
+
+}
+
+.card h4 {
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+    padding-left: 23px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.btn {
+    padding: .8rem;
+    border: none;
+    background-color: #4158D0;
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #4158D0;
+    background: linear-gradient(0.25turn, #e90404, #be43a0, #d80000);
+    box-shadow: 2px 3px 10px rgba(255, 255, 255, .2);
+
+
+}
+
+.link {
+    text-decoration: underline;
+    text-align: center;
+    padding-top: 20px;
+    color: #ffffff;
+    font-size: 15px;
+}
