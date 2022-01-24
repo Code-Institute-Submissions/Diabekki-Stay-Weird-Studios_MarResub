@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
-    
+
     {% endblock %}
 
     {% block extra_css %}
@@ -76,8 +76,8 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link" href="#" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="text-white nav-link" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
@@ -156,27 +156,15 @@
         <div class="container p-0 pb-0">
             <!--Grid row-->
             <div class="row">
-                <hr class="w-100 clearfix d-md-none" />
-                <hr class="w-100 clearfix d-md-none" />
-                <hr class="w-100 clearfix d-md-none" />
-
-                <!-- Contact section -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-6 font-weight-bold">Find us!</h6>
-                    <p><i class="fas fa-home mr-3"></i> Limerick City, Ireland</p>
-                    <p><i class="fas fa-envelope mr-3"></i> stay-weird-studios@gmail.com</p>
-                </div>
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                    <a class="text-white nav-link" href="{% url 'contact_form' %}">
-                        <p class="contact-link text-uppercase">Contact us!</p>
-                    </a>
-                </div>
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                <div class="col-12">
                     <a class="text-white nav-link" href="{% url 'feedback_form' %}">
                         <p class="text-uppercase">Give us feedback!!</p>
                     </a>
                 </div>
-                <div class="col-12 col-md-6">
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
                     <!-- Mailchimp Signup Form -->
                     <div id="mc_embed_signup">
                         <form
@@ -204,10 +192,12 @@
                                 <div class="optionalParent">
                                     <div class="clear foot">
                                         <input type="submit" value="Subscribe" name="subscribe"
-                                            id="mc-embedded-subscribe" class="button" style="background: linear-gradient(0.25turn, #900000, #6A2659, #900000);">
+                                            id="mc-embedded-subscribe" class="button"
+                                            style="background: linear-gradient(0.25turn, #900000, #6A2659, #900000);">
                                         <p class="brandingLogo"><a href="http://eepurl.com/hSYeFf"
                                                 title="Mailchimp - email marketing made easy and fun"><img
-                                                    src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="Brand Image"></a>
+                                                    src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"
+                                                    alt="Brand Image"></a>
                                         </p>
                                     </div>
                                 </div>
@@ -216,28 +206,38 @@
                     </div>
                     <!--End mc_embed_signup-->
                 </div>
-                <div class="col-12">
-                    <a href="https://www.privacypolicygenerator.info/live.php?token=oqFRlIf5fbe1KCMsxR39pTxNcADcZGvz" target="_blank">Privacy Policy</a>
-                </div>
-                <div class="col-md-3 col-lg-2 col-xl-5 mx-auto mt-3">
-                    <h6 class="follow-text text-uppercase mb-4 font-weight-bold">Follow us!</h6>
-
-                    <!-- Facebook -->
-                    <a class="btn btn-primary btn-floating m-1" target="_blank" style="background-color: #3b5998"
-                        href="https://www.facebook.com/stayweirdstudios" role="button"><i
-                            class="fab fa-facebook-f"></i></a>
-
-                    <!-- Instagram -->
-                    <a class="btn btn-primary btn-floating m-1" target="_blank" style="background-color: #8a3ab9"
-                        href="https://www.instagram.com/weirdcylinder/" role="button"><i
-                            class="fab fa-instagram"></i></a>
-
-                    <!-- Youtube -->
-                    <a class="btn btn-primary btn-floating m-1" target="_blank" style="background-color: #ff0000"
-                        href="https://www.youtube.com/channel/UCXJkhluDOBNbfFGwPEFNbjw" role="button"><i
-                            class="fab fa-youtube"></i></a>
+                <div class="col-7">
+                        <h6 class="text-uppercase mb-6 font-weight-bold">Find us!</h6>
+                        <p><i class="fas fa-home mr-3"></i> Limerick City, Ireland</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38715.785351100494!2d-8.666187306216083!3d52.66473533938024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b5c6f0e518f5b%3A0xee03f5c36ada0ed4!2sLimerick%20City%2C%20Co.%20Limerick!5e0!3m2!1sen!2sie!4v1643067218267!5m2!1sen!2sie" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a class="text-white nav-link" href="{% url 'contact_form' %}">
+                    <p class="text-uppercase">Contact us!</p>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h6 class="follow-text text-uppercase mb-4 font-weight-bold">Follow us!</h6>
+
+                <!-- Facebook -->
+                <a class="btn btn-primary btn-floating m-1" target="_blank" style="background-color: #3b5998"
+                    href="https://www.facebook.com/stayweirdstudios" role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-primary btn-floating m-1" target="_blank" style="background-color: #8a3ab9"
+                    href="https://www.instagram.com/weirdcylinder/" role="button"><i class="fab fa-instagram"></i></a>
+
+                <!-- Youtube -->
+                <a class="btn btn-primary btn-floating m-1" target="_blank" style="background-color: #ff0000"
+                    href="https://www.youtube.com/channel/UCXJkhluDOBNbfFGwPEFNbjw" role="button"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
         </div>
         <!-- Copyright -->
         <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
@@ -245,16 +245,15 @@
             <a class="text-white">Rebecca Tubridy</a>
         </div>
     </footer>
-    </div>
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
 
     <!-- MailChimp Script -->
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+    <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
     </script>
-    <script type='text/javascript'>
+    <script>
         (function ($) {
             window.fnames = new Array();
             window.ftypes = new Array();
