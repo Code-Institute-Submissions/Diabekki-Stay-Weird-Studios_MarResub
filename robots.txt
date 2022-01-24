@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://stay-weird-studios.herokuapp.com/sitemap.xml

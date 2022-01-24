@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/account/signup/</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/account/login/</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/cart/</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?sort=category&amp;direction=asc</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?category=hoodies</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?category=tshirts</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?category=tanks</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?category=caps</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?category=bags</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?category=hoodies,tshirts,tanks,caps,bags</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/merchandise/?category=album</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/contact/</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://stay-weird-studios.herokuapp.com/account/password/reset/</loc>
+  <lastmod>2022-01-24T11:05:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
