@@ -1,0 +1,21 @@
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'feedback/css/feedback.css' %}">
+{% endblock %}
+
+
+<div class=content>
+    <div class="wrapper-1">
+      <div class="wrapper-2">
+        <h1>Thank you !</h1>
+        <p>Thanks you for your rating and comment!</p>
+        <p>Your rating and feedback will help us improve our website and helps us keep growing. Stay Weird!</p>
+      </div>
+      <div class="footer-like">
+        <p>
+         <a href="{% url 'homepage' %}">Back to base</a>
+        </p>
+      </div>
+  </div>
+  </div>

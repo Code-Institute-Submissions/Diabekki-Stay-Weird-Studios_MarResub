@@ -1,0 +1,24 @@
+<h1></h1>
+<p></p>
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'feedback/css/feedback.css' %}">
+{% endblock %}
+
+<div class=content>
+    <div class="wrapper-1">
+      <div class="wrapper-2">
+        <h1>Thank you !</h1>
+        <p>Thanks you for your message</p>
+        <p>Your contact information and message was successfully submitted and we'll 
+            get back to your query as soon as possible! Stay Weird!</p>
+      </div>
+      <div class="footer-like">
+        <p>
+         <a href="{% url 'homepage' %}">Back to "bass"</a>
+        </p>
+      </div>
+  </div>
+  </div>

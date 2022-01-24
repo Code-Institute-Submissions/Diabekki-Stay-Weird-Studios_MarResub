@@ -4,3 +4,99 @@ input[type=text], input[type=email], textarea {
     margin: 8px 0;
     display: inline-block;
    }
+
+
+   * {
+    box-sizing: border-box;
+    /* outline:1px solid ;*/
+}
+
+/* Success section */
+
+* {
+    box-sizing: border-box;
+    /* outline:1px solid ;*/
+}
+
+body {
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.wrapper-1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-2 {
+    padding: 35px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Kanit', cursive;
+    font-size: 4em;
+    letter-spacing: 3px;
+    color: #d3b8ff;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.wrapper-2 p {
+    margin: 0;
+    font-size: 1.5em;
+    color: rgb(255, 255, 255);
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.footer-like {
+    margin-top: auto;
+    background: #4b000082;
+    padding: 30px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+.footer-like p {
+    margin: 0;
+    padding: 4px;
+    color: #d3b8ff;
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: 1px;
+}
+
+.footer-like p a {
+    text-decoration: none;
+    color: #d3b8ff;
+    font-weight: 600;
+}
+
+@media (min-width:360px) {
+    h1 {
+        font-size: 4.5em;
+    }
+}
+
+@media (min-width:600px) {
+    .content {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .wrapper-1 {
+        height: initial;
+        max-width: 620px;
+        margin: 0 auto;
+        margin-top: 50px;
+        box-shadow:  4px 2px 50px 15px rgba(19, 22, 13, 10);
+    }
+
+}
