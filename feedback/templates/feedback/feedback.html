@@ -21,7 +21,12 @@
             <label for="star1" title="text">1 star</label>
           </div>
     </div>
-    <button class="btn">Submit</button>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <input class="submit-button" type="submit" value="Submit">
+     </form>
     <a class="link" href="{% url 'homepage' %}">Not feeling it</a>
 </div>
+
 {% endblock %}
