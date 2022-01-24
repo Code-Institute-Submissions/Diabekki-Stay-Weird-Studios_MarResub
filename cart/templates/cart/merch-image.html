@@ -1,0 +1,5 @@
+{% if item.merch.image %}
+<img class="img-fluid rounded" src="{{ item.merch.image.url }}" alt="{{ item.merch.name }}">
+{% else %}
+<img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.merch.name }}">
+{% endif %}

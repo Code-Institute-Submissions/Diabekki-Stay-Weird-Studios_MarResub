@@ -16,7 +16,7 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if merch.image %}
-                <a href="{{ product.image.url }}" target="_blank">
+                <a href="{{ merch.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ merch.image.url }}" alt="{{ merch.name }}">
                 </a>
                 {% else %}
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-            <div class="product-details-container mb-5 mt-md-5">
+            <div class="merch-details-container mb-5 mt-md-5">
                 <p class="mb-0">{{ merch.name }}</p>
                 <p class="lead mb-0 text-left font-weight-bold">${{ merch.price }}</p>
                 {% if merch.category %}
@@ -77,18 +77,18 @@
                                     <div class="input-group-prepend">
                                         <button
                                             class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ merch.id }}"
-                                            data-item_id="{{ merch.id }}">
+                                            data-merch_id="{{ merch.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-minus"></i>
                                             </span>
                                         </button>
                                     </div>
                                     <input class="form-control qty_input id_qty_{{ merch.id }}" type="number"
-                                        name="quantity" value="1" min="1" max="99" data-item_id="{{ merch.id }}">
+                                        name="quantity" value="1" min="1" max="99" data-merch_id="{{ merch.id }}">
                                     <div class="input-group-append">
                                         <button
                                             class="increment-qty btn btn-black rounded-0 increment-qty_{{ merch.id }}"
-                                            data-item_id="{{ merch.id }}">
+                                            data-merch_id="{{ merch.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-plus"></i>
                                             </span>

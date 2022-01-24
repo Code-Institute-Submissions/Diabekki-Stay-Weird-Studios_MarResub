@@ -76,7 +76,7 @@ def cart_checkout(request):
                             purchase_line_item.save()
                 except Merch.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your cart wasn't found in our database. "
+                        "One of the items in your cart wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     purchase.delete()

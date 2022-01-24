@@ -1,0 +1,3 @@
+<p class="my-0"><strong>{{ item.merch.name }}</strong></p>
+<p class="my-0"><strong>Size: </strong>{% if item.merch.has_sizes %}{{ item.clothing_size|upper }}{% else %}N/A{% endif %}</p>
+<p class="my-0 small text-white">SKU: {{ item.merch.sku|upper }}</p>

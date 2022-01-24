@@ -1,0 +1,34 @@
+<form class="form update-form" method="POST" action="{% url 'change_cart' item.merch_id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="input-group input-group-{{ item.merch_id }}">
+            <div class="input-group-prepend">
+                <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ item.merch_id }} 
+                    {% if item.clothing_size %}decrement-size_{{ item.merch_id }}_{{ item.clothing_size }}{% endif %}" 
+                    data-merch_id="{{ item.merch_id }}" data-size="{{ item.clothing_size }}">
+                    <span>
+                        <i class="fas fa-minus fa-sm"></i>
+                    </span>
+                </button>
+            </div>
+            <input class="form-control form-control-sm qty_input id_qty_{{ item.merch_id }} 
+                {% if item.clothing_size %}clothing_size_{{ item.merch_id }}_{{ item.clothing_size }}{% endif %}" type="number"
+                name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                data-merch_id="{{ item.merch_id }}" data-size="{{ item.clothing_size }}">
+            <div class="input-group-append">
+                <button class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ item.merch_id }} 
+                    {% if item.clothing_size %}increment-size_{{ item.merch_id }}_{{ item.clothing_size }}{% endif %}"
+                    data-merch_id="{{ item.merch_id }}" data-size="{{ item.clothing_size }}">
+                    <span>
+                        <i class="fas fa-plus fa-sm"></i>
+                    </span>
+                </button>
+            </div>
+            {% if item.merch.has_sizes %}
+                <input type="hidden" name="merch_size" value="{{ item.clothing_size }}">
+            {% endif %}
+        </div>
+    </div>
+</form>
+<a class="update-link text-info"><small>Update</small></a>
+<a class="remove-item text-danger float-right" id="remove_{{ item.merch_id }}" data-merch_size="{{ item.clothing_size }}"><small>Remove</small></a>
