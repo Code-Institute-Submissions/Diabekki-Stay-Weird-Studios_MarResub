@@ -105,10 +105,10 @@ def add_merch(request):
             messages.success(request, 'Successfully added merchandise!')
             return redirect(reverse('merch_details', args=[merch.id]))
         else:
-            messages.error(request, 'Failed to add merchandise. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add merch. Please check form is valid.')
     else:
         form = MerchForm()
-        
+
     template = 'merchandise/add_merch.html'
     context = {
         'form': form,
@@ -132,7 +132,7 @@ def edit_merch(request, merch_id):
             messages.success(request, 'Successfully updated merchandise!')
             return redirect(reverse('merch_details', args=[merch.id]))
         else:
-            messages.error(request, 'Failed to update merchandise. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update merch. Check if form is valid.')
     else:
         form = MerchForm(instance=merch)
         messages.info(request, f'You are editing {merch.name}')
@@ -152,7 +152,7 @@ def delete_merch(request, merch_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry friend, only store owners can do this')
         return redirect(reverse('homepage'))
-        
+
     merch = get_object_or_404(Merch, pk=merch_id)
     merch.delete()
     messages.success(request, 'Merchandise deleted!')

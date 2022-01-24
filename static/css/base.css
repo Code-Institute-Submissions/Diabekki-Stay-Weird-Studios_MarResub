@@ -62,11 +62,11 @@ body {
 }
 
 a {
-    color: #900000;
+    color: #ffffff;
 }
 
 a:hover {
-    color: #9b3782;
+    color: #e700ad;
 }
 
 .merch-home {
@@ -454,9 +454,8 @@ select option[value=""] {
 /* Mailchimp */
 
 #mc_embed_signup {
-    background: #fff;
+    background: rgba(75, 0, 0, 0);
     clear: left;
-    font: 14px Helvetica, Arial, sans-serif;
+    font: 14px 'Kanit', Arial, sans-serif;
 }
 
-/* Feedback form */

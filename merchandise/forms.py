@@ -1,6 +1,7 @@
 from django import forms
 from .widgets import CustomClearFileInput
-from .models import Merch, Category, Comment 
+from .models import Merch, Category, Comment
+
 
 class MerchForm(forms.ModelForm):
 

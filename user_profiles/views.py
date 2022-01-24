@@ -18,7 +18,7 @@ def user(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please check form is valid.')
+            messages.error(request, 'Update failed. Please check again.')
     else:
         form = UserProfileForm(instance=user)
     purchases = user.purchases.all()
@@ -29,8 +29,9 @@ def user(request):
         'purchases': purchases,
         'on_profile_page': True,
     }
-        
+
     return render(request, template, context)
+
 
 def purchase_history(request, purchase_number):
     purchase = get_object_or_404(Purchase, purchase_number=purchase_number)

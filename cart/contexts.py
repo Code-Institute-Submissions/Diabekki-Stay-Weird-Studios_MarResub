@@ -3,8 +3,8 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from merchandise.models import Merch
 
+
 def cart_items(request):
-    
     cart_items = []
     total = 0
     merch_count = 0
@@ -22,7 +22,7 @@ def cart_items(request):
             })
         else:
             merch = get_object_or_404(Merch, pk=merch_id)
-            for clothing_size, quantity in merch_data['item_size'].items(): 
+            for clothing_size, quantity in merch_data['item_size'].items():
                 total += quantity * merch.price
                 merch_count += quantity
                 cart_items.append({
@@ -37,8 +37,7 @@ def cart_items(request):
     else:
         delivery = 0
 
-    grand_total = delivery + total
-    
+    grand_total = delivery + total    
     context = {
         'cart_items': cart_items,
         'total': total,

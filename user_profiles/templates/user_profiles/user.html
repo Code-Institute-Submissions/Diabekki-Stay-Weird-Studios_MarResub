@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
+                <h2 class="logo-font mb-4 text-white">My Profile</h2>
                 <hr>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 <p class="text-white">Purchase History</p>
                 <div class="Purchase-history table-responsive">
                     <table class="table table-sm table-borderless">
-                        <thead>
+                        <thead class="text-white">
                             <tr>
                                 <th>Purchase Number</th>
                                 <th>Date</th>
@@ -55,7 +55,7 @@
                                     </td>
                                     <td>{{ purchase.date }}</td>
                                     <td>
-                                        <ul class="list-unstyled">
+                                        <ul class="list-unstyled text-white">
                                             {% for item in purchase.lineitems.all %}
                                                 <li class="small">
                                                     {% if item.merch.has_sizes %}
