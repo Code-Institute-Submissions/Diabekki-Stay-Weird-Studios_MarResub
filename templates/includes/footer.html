@@ -1,0 +1,110 @@
+{% load static %}
+
+<footer class="page-footer font-small stylish-color-dark pt-4  footer-div">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Welcome to Chocolate Factory!</h5>
+        <p>
+          Chocolate Factory is proud to offer all the delights and wonders you could expect from our oompa run candy
+          wonderland!
+        </p>
+
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">**FAIR USE DISCLAIMER**</h5>
+        <p>
+          Chocolate Factory is a fictional ecommerce store used for educational purposes and all content is credited to
+          their original owners in the project readme!
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <hr>
+
+  <!-- Call to action -->
+
+  <p class="text-center">Join our mailing list!</p>
+  <form class="input-group justify-content-center" action="https://herokuapp.us20.list-manage.com/subscribe/post?u=afbe33b5f314de5e9fd3919d9&amp;id=e16404b4d5"
+  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank"
+  novalidate>
+    <input class="form-control-sm crispy-override" placeholder="example@example.com" aria-label="Your email"
+    type="email" value="" name="EMAIL" id="mce-EMAIL">
+    <div class="input-group-append">
+      <button class="btn btn-sm my-0 explore-button" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Submit</button>
+    </div>
+  </form>
+  <p class="text-center"></p>
+  <!-- Call to action -->
+
+  <hr>
+
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center">
+    <li class="list-inline-item footer-list">
+      <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/chocolatefactory963" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li class="list-inline-item footer-list">
+      <a href="{% url 'contact' %}">Contact us</a>
+    </li>
+  </ul>
+  <!-- Social buttons -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+
+    <a href="https://github.com/raeel97" id="github" target="_blank"><i class="fab fa-github"></i>Raeel97</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+{% block postloadjs %}
+<script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script>
+  (function ($) {
+    window.fnames = new Array();
+    window.ftypes = new Array();
+    fnames[0] = 'EMAIL';
+    ftypes[0] = 'email';
+    fnames[1] = 'FNAME';
+    ftypes[1] = 'text';
+    fnames[2] = 'LNAME';
+    ftypes[2] = 'text';
+    fnames[3] = 'ADDRESS';
+    ftypes[3] = 'address';
+    fnames[4] = 'PHONE';
+    ftypes[4] = 'phone';
+    fnames[5] = 'BIRTHDAY';
+    ftypes[5] = 'birthday';
+  }(jQuery));
+  var $mcj = jQuery.noConflict(true);
+</script>
+{% endblock %}
+
+
