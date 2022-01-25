@@ -44,5 +44,4 @@ class Comment(models.Model):
         ordering = ["added_on"]
 
     def __str__(self):
-        # return f"{self.name} commented: {self.message} on the following merchandise: {self.merch}"
-        return self.name
+        return f"{self.name} commented: {self.message} on the following merchandise: {self.merch}"
