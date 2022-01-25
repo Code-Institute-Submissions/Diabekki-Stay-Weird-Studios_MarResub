@@ -491,3 +491,9 @@ form was effecting it */
     margin-top: 10px;   
     width: 100%;
 }
+
+.explore-button {
+    background: #622b60;
+    color: #ffffff;
+    border: 1px solid white;
+}
