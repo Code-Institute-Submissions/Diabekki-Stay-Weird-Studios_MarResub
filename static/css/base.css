@@ -466,3 +466,28 @@ select option[value=""] {
     border: 3px solid white;
     border-radius: 10px;
 }
+
+/* This fixes the css in footer for newsletter button, crispy forms for contact 
+form was effecting it */
+.crispy-override {
+    height: calc(1.5em + 0.5rem + 2px) !important;
+    font-size: .875rem!important;
+    line-height: 1.5!important;
+    border-radius: 0.2rem!important;
+    width: auto!important;
+    margin: revert !important;
+    display: unset !important;
+}
+
+.footer-list > * {
+    color: #f8f9fa;
+    background-color: #622b60;
+    border: 2px solid #e9ecef;
+    border-radius: 5px;
+    padding: 3px;
+}
+.footer-div {
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000); 
+    margin-top: 10px;   
+    width: 100%;
+}

@@ -79,7 +79,7 @@ def merch_details(request, merch_id):
         name = request.POST.get('name', username)
         email = request.POST.get('email', '')
         message = request.POST.get('message', '')
-        comment = Comment.objects.create(merch=merch, name=name, email=email, message=message)
+        comments = Comment.objects.create(merch=merch, name=name, email=email, message=message)
 
     context = {
         'merch': merch,
