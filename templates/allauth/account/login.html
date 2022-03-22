@@ -7,8 +7,9 @@
 
 {% block inner_content %}
 
-<h3 class=log-font mb-4>{% trans "Sign In" %}</h3>
-
+<hr>
+<h2 class="logo-font mb-4 text-light">{% trans "Sign In" %}</h2>
+<hr>
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
@@ -29,8 +30,8 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<p class="text-light">{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}" class="text-warning">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -42,7 +43,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <a class="btn btn-outline-black rounded-0" href="{% url 'homepage' %}">Home</a>
   <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
   <p class="mt-2">
-    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <a class="button secondaryAction text-warning" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>
 </form>
 

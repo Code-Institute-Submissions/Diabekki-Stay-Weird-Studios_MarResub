@@ -65,7 +65,7 @@
             </div>
             <div class="table-responsive rounded">
                 <table class="table table-sm table-borderless">
-                    <thead class="text-white">
+                    <thead class="logo-font text-light">
                         <tr>
                             <th scope="col">Merchandise Info</th>
                             <th scope="col"></th>
@@ -76,7 +76,7 @@
                     </thead>
 
                     {% for item in cart_items %}
-                    <tr>
+                    <tr class="text-light">
                         <td class="p-3 w-25">
                             {% include "cart/merch-image.html" %}
                         </td>
@@ -95,7 +95,7 @@
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td colspan="5" class="pt-5 text-right">
+                        <td colspan="5" class="pt-5 text-right text-light">
                             {% include "cart/cart-total.html" %}
                         </td>
                     </tr>
@@ -110,7 +110,7 @@
             <p class="lead mb-5 text-white">Your cart is empty.</p>
             <a href="{% url 'merchandise' %}" class="btn btn-outline-black rounded-0 btn-lg" style="background: linear-gradient(0.25turn, #900000, #6A2659, #900000);">
                 <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
+                    <i class="fas fa-chevron-left text-warning"></i>
                 </span>
                 <span class="text-uppercase">Keep Shopping</span>
             </a>

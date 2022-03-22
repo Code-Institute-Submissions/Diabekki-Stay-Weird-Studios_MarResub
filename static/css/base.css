@@ -18,6 +18,14 @@ body {
     background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
 }
 
+.primaryAction {
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
+}
+
+.form-check {
+    color: white;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
@@ -71,7 +79,6 @@ a:hover {
 
 .merch-home {
     font-size: 1.5rem;
-
 }
 
 .btn-search {

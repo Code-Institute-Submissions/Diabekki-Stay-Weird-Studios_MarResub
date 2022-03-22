@@ -20,20 +20,20 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Checkout</h2>
+            <h2 class="logo-font mb-4 text-light">Checkout</h2>
             <hr>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12 col-lg-6 order-lg last mb-5">
-            <p class="text-white">Purchase Summary ({{ merch_count }})</p>
+        <div class="col-12 col-lg-6 order-lg last mb-5 text-light">
+            <p>Purchase Summary ({{ merch_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
-                    <p class="mb-1 mt-0 small text-white">Merchandise</p>
+                    <p class="mb-1 mt-0">Merchandise</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="mb-1 mt-0 small text-white">Total</p>
+                    <p class="mb-1 mt-0">Total</p>
                 </div>
             </div>
             {% for item in cart_items %}
@@ -49,12 +49,12 @@
                 </div>
                 <div class="col-7">
                     <p class="my-0"><strong>{{ item.merch.name }}</strong></p>
-                    <p class="my-0 small">Size:
+                    <p class="my-0">Size:
                         {% if item.merch.has_sizes %}{{ item.clothing_size|upper }}{% else %}N/A{% endif %}</p>
-                    <p class="my-0 small text-white">Qty: {{ item.quantity }}</p>
+                    <p class="my-0 text-light">Qty: {{ item.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="my-0 small text-white">${{ item.merch.price | calc_subtotal:item.quantity }}</p>
+                    <p class="my-0 text-light">${{ item.merch.price | calc_subtotal:item.quantity }}</p>
                 </div>
             </div>
             {% endfor %}
@@ -73,16 +73,16 @@
             </div>
         </div>
         <div class="col-12 col-lg-6">
-            <p classn="text-muted">Please fill out your details to finish your purchase</p>
+            <p class="text-light text-center">Please fill out your details to finish your purchase</p>
             <form action="{% url 'cart_checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small text-white px-2 w-auto">Details</legend>
+                    <legend class="fieldset-label small text-light px-2 w-auto">Details</legend>
                     {{ purchase_form.full_name | as_crispy_field }}
                     {{ purchase_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small text-white px-2 w-auto">Delivery</legend>
+                    <legend class="fieldset-label small text-light px-2 w-auto">Delivery</legend>
                     {{ purchase_form.phone_number | as_crispy_field }}
                     {{ purchase_form.street_address1 | as_crispy_field }}
                     {{ purchase_form.street_address2 | as_crispy_field }}
@@ -95,9 +95,9 @@
                         <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info"
                             checked>
                         {% else %}
-                        <label class="form-check-label" for="id-save-info">
-                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
-                            <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                        <label class="form-check-label text-light" for="id-save-info">
+                            <a class="text-warning" href="{% url 'account_signup' %}">Create an account</a> or
+                            <a class="text-warning" href="{% url 'account_login' %}">login</a> to save this information
                         </label>
                         {% endif %}
                     </div>
@@ -115,7 +115,7 @@
                 <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'view_cart' %}" class="btn btn-outline-black rounded-0">
                         <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
+                            <i class="fas fa-chevron-left text-warning"></i>
                         </span>
                         <span class="font-weight-bold">Adjust Shopping Cart</span>
                     </a>
@@ -125,7 +125,7 @@
                             <i class="fas fa-lock"></i>
                         </span>
                     </button>
-                    <p class="small text-danger my-0">
+                    <p class="text-warning my-0">
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>
                         </span>
