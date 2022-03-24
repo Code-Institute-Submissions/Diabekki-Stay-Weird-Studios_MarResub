@@ -234,6 +234,11 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+.cart-empty {
+    margin-top: 16%;
+}
+
+
 /* Stripe CSS */
 
 .StripeElement,
@@ -490,6 +495,7 @@ form was effecting it */
     display: unset !important;
 }
 
+
 .footer-list > * {
     color: #f8f9fa;
     background-color: #622b60;
@@ -499,7 +505,7 @@ form was effecting it */
 }
 .footer-div {
     background: linear-gradient(0.25turn, #900000, #6A2659, #900000); 
-    margin-top: 10px;   
+    margin-top: 5%;   
     width: 100%;
 }
 

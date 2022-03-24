@@ -104,12 +104,12 @@
                 </table>
             </div>
             {% else %}
-            <p class="lead mb-5 text-white">Your cart is empty.</p>
+            <p class="lead mb-5 text-white cart-empty">Your cart is empty.</p>
             <a href="{% url 'merchandise' %}" class="btn btn-outline-black rounded-0 btn-lg" style="background: linear-gradient(0.25turn, #900000, #6A2659, #900000);">
                 <span class="icon">
                     <i class="fas fa-chevron-left text-warning"></i>
                 </span>
-                <span class="text-uppercase">Keep Shopping</span>
+                <span class="text-uppercase text-light">Keep Shopping</span>
             </a>
             {% endif %}
         </div>
