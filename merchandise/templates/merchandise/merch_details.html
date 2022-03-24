@@ -12,7 +12,7 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" style="margin-top: 5%;">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if merch.image %}
@@ -44,8 +44,8 @@
                 {% endif %}
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a href="{% url 'edit_merch' merch.id %}">Edit</a>
-                        <a classm="text-danger" href="{% url 'delete_merch' merch.id %}">Delete</a>
+                        <a href="{% url 'edit_merch' merch.id %}" class="text-warning">Edit</a> /
+                        <a href="{% url 'delete_merch' merch.id %}" class="text-warning">Delete</a>
                     </small>
                 {% endif %}
                 <!-- <iframe src="https://open.spotify.com/embed/album/2O619TMmH89ZWugaL99nzl?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> -->
@@ -105,7 +105,7 @@
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to cart">
+                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5 primaryAction" value="Add to cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endwith %}
@@ -117,15 +117,15 @@
 </div>
 <div class="container">
     <div class="row comment-body">
-        <div class="col-md-8 card mb-5 mt-5" style="background-color: rgba(114, 0, 0, 0.288);">
-            <h3 class="text-white">Comments:</h3>
+        <div class="col-md-8 card mb-5 mt-5" style="background-color: rgba(83, 0, 0, 0.623);">
+            <h3 class="text-white" style="padding-top: 4%;">Comments:</h3>
             <div class="card-body text-white">
                 {% if comments %}
                 <!-- We want a for loop inside the empty control tags to iterate through each review in reviews -->
                 {% for comment in comments %}
-                <div class="comments" style="padding: 10px, text-white">
+                <div class="comments" style="background-color: rgba(98, 43, 96, 0.397);" >
                     <p class="font-weight-bold">
-                        <!-- The reviewers's name goes here. Check the model if you're not sure what that is -->
+                        <!-- The reviewers's name goes here. -->
                         {{ comment.name }}
                         <span class="font-weight-normal">
                             <!-- The reviews created date goes here -->

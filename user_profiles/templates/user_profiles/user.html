@@ -19,24 +19,24 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4 text-white">My Profile</h2>
+                <h2 class="logo-font mb-4 text-white" style="padding-top: 5%;">My Profile</h2>
                 <hr>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-6">
-                <p class="text-white">Default Delivery Information</p>
+            <div class="col-12 col-lg-6 text-light">
+                <p>Default Delivery Information</p>
                 <form class="mt-3" action="{% url 'user' %}" method="POST" id="user-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                    <button class="btn btn-black rounded-0 text-uppercase float-right primaryAction">Update Information</button>
                 </form>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 text-light">
                 <p class="text-white">Purchase History</p>
                 <div class="Purchase-history table-responsive">
                     <table class="table table-sm table-borderless">
-                        <thead class="text-white">
+                        <thead class="text-light">
                             <tr>
                                 <th>Purchase Number</th>
                                 <th>Date</th>
@@ -44,11 +44,11 @@
                                 <th>Purchase Total</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-light">
                             {% for purchase in purchases %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'purchase_history' purchase.purchase_number %}"
+                                        <a href="{% url 'purchase_history' purchase.purchase_number %}" class="text-warning"
                                         title="{{ purchase.purchase_number }}">
                                             {{ purchase.purchase_number|truncatechars:6 }}
                                         </a>
