@@ -4,10 +4,10 @@
         <div class="input-group input-group-{{ item.merch_id }}">
             <div class="input-group-prepend">
                 <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ item.merch_id }} 
-                    {% if item.clothing_size %}decrement-size_{{ item.merch_id }}_{{ item.clothing_size }}{% endif %}" 
+                    {% if item.clothing_size %}decrement-size_{{ item.merch_id }}_{{ item.clothing_size }}{% endif %} primaryAction" 
                     data-merch_id="{{ item.merch_id }}" data-size="{{ item.clothing_size }}">
                     <span>
-                        <i class="fas fa-minus fa-sm"></i>
+                        <i class="fas fa-minus"></i>
                     </span>
                 </button>
             </div>
@@ -17,10 +17,10 @@
                 data-merch_id="{{ item.merch_id }}" data-size="{{ item.clothing_size }}">
             <div class="input-group-append">
                 <button class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ item.merch_id }} 
-                    {% if item.clothing_size %}increment-size_{{ item.merch_id }}_{{ item.clothing_size }}{% endif %}"
+                    {% if item.clothing_size %}increment-size_{{ item.merch_id }}_{{ item.clothing_size }}{% endif %} primaryAction"
                     data-merch_id="{{ item.merch_id }}" data-size="{{ item.clothing_size }}">
                     <span>
-                        <i class="fas fa-plus fa-sm"></i>
+                        <i class="fas fa-plus"></i>
                     </span>
                 </button>
             </div>

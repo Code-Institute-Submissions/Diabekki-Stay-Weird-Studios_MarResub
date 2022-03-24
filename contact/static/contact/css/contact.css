@@ -19,7 +19,7 @@ input[type=text], input[type=email], textarea {
 }
 
 body {
-    background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
+    background: url('/media/microphone.jpg');
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;

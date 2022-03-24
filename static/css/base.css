@@ -36,7 +36,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: rgba(230, 30, 30, 0.377);
+    background: rgba(75, 12, 12, 0.377);
     z-index: -1;
 }
 
@@ -79,6 +79,10 @@ a {
 
 a:hover {
     color: #e700ad;
+}
+
+.fa-heart {
+    color: #d60000;
 }
 
 .merch-home {
@@ -491,7 +495,7 @@ form was effecting it */
     background-color: #622b60;
     border: 2px solid #e9ecef;
     border-radius: 5px;
-    padding: 3px;
+    padding: 6px;
 }
 .footer-div {
     background: linear-gradient(0.25turn, #900000, #6A2659, #900000); 
@@ -502,5 +506,7 @@ form was effecting it */
 .explore-button {
     background: #622b60;
     color: #ffffff;
-    border: 1px solid white;
+    border: 2px solid #e9ecef;
+    border-radius: 5px;
+    padding: 6px;
 }
