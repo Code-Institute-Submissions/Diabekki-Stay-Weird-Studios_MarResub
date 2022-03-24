@@ -6,7 +6,7 @@ body {
     background: url('/media/microphone.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: 'Kanit';
 }
 
@@ -20,6 +20,10 @@ body {
 
 .primaryAction {
     background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
+}
+
+.primaryAction:hover {
+    background: linear-gradient(0.25turn, #bd0101, #9b3782, #bd0101);
 }
 
 .form-check {
@@ -101,10 +105,6 @@ a:hover {
 
 .btn {
     color: #ffffff;
-}
-
-#div_id_message {
-    color: #f8f9fa;
 }
 
 .btn:hover {

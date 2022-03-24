@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
+<div class="overlay text-light"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
@@ -38,7 +38,7 @@
 style="margin-right: 230px; margin-left: 230px; margin-bottom: 50px;">
     {% csrf_token %}
     {{ form | crispy }}
-    <input class="submit-button" type="submit" value="Submit">
+    <input class="submit-button primaryAction text-light" type="submit" value="Submit">
  </form>
 <!--Section: Contact v.2-->
 {% endblock %}
