@@ -42,11 +42,7 @@ class Purchase(models.Model):
         """
         self.purchase_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.purchase_total < settings.FREE_DELIVERY_THRESHOLD:
-            sdp = settings.STANDARD_DELIVERY_PERCENTAGE
-            self.delivery_cost = self.purchase_total * sdp / 100
-        else:
-            self.delivery_cost = 0
+        self.delivery_cost = self.purchase_total / 10
         self.grand_total = self.purchase_total + self.delivery_cost
         self.save()
 

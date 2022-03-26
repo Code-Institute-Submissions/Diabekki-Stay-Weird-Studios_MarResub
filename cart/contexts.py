@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from merchandise.models import Merch
 
 
-def cart_items(request):
+def cart_contents(request):
     cart_items = []
     total = 0
     merch_count = 0
@@ -37,7 +37,8 @@ def cart_items(request):
     else:
         delivery = 0
 
-    grand_total = delivery + total    
+    grand_total = delivery + total
+
     context = {
         'cart_items': cart_items,
         'total': total,

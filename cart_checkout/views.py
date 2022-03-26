@@ -8,7 +8,7 @@ from .models import Purchase, PurchaseLineItem
 from merchandise.models import Merch
 from user_profiles.forms import UserProfileForm
 from user_profiles.models import UserProfile
-from cart.contexts import cart_items
+from cart.contexts import cart_contents
 
 import stripe
 import json
@@ -93,7 +93,7 @@ def cart_checkout(request):
             messages.error(request, "There's nothing in your cart at the moment")
             return redirect(reverse('merchandise'))
 
-        current_cart = cart_items(request)
+        current_cart = cart_contents(request)
         total = current_cart['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
