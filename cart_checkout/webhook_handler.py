@@ -96,8 +96,8 @@ class StripeWH_Handler:
         if purchase_exsits:
             self.confirmation_email(purchase)
             return HttpResponse(
-                content=(f'Webhook received: {event["type"]} | SUCCESS: '
-                         'Verified purchase already in database'),
+                content=f'Webhook received: {event["type"]} | SUCCESS: \
+                    Verified purchase already in database',
                 status=200)
         else:
             purchase = None
@@ -140,8 +140,8 @@ class StripeWH_Handler:
                     status=500)
         self.confirmation_email(purchase)
         return HttpResponse(
-            content=(f'Webhook received: {event["type"]} | SUCCESS: '
-                     'Created purchase in webhook'),
+            content=f'Webhook received: {event["type"]} | SUCCESS: \
+                Created purchase in webhook',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):
