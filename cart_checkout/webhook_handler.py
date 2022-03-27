@@ -1,14 +1,13 @@
+import time
+import json
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
 from django.conf import settings
-from .models import Purchase, PurchaseLineItem
-from merchandise.models import Merch
 from user_profiles.models import UserProfile
-
-import json
-import time
+from merchandise.models import Merch
+from .models import Purchase, PurchaseLineItem
 
 
 class StripeWH_Handler:
@@ -21,10 +20,10 @@ class StripeWH_Handler:
         """Send the user a confirmation email"""
         customer_email = purchase.email
         sub = render_to_string(
-            'cart_checkout/confirm_email/confirmation_email_sub.txt',
+            'cart_checkout/confirmation_email/confirmation_email_sub.txt',
             {'purchase': purchase})
         body = render_to_string(
-            'cart_checkout/confirm_email/confirmation_email_body.txt',
+            'cart_checkout/confirmation_email/confirmation_email_body.txt',
             {'purchase': purchase, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
