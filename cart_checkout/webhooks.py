@@ -2,10 +2,9 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
+import stripe
 
 from cart_checkout.webhook_handler import StripeWH_Handler
-
-import stripe
 
 @require_POST
 @csrf_exempt
@@ -29,9 +28,11 @@ def webhook(request):
         return HttpResponse(content=e, status=400)
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
-        return HttpResponse(conten=e, status=400)
+        return HttpResponse(content=e, status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
+
+    print('Success')
 
     # webhook handler
     handler = StripeWH_Handler(request)
