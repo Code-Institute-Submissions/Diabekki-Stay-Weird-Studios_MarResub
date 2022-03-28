@@ -21,11 +21,12 @@ def cache_data(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(pid, metadata={
+        intent = stripe.PaymentIntent.modify(pid, metadata={
             'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
+        print(intent)
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, ('Sorry, your payment cannot be '
@@ -37,6 +38,9 @@ def cache_data(request):
 def cart_checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    print('stripe_public_key:', stripe_public_key)
+    print('stripe_secret_key:', stripe_secret_key)
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
@@ -84,6 +88,7 @@ def cart_checkout(request):
                     purchase.delete()
                     return redirect(reverse('view_cart'))
 
+            print('purchase:', purchase)
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('cart_checkout_success', args=[purchase.purchase_number]))
         else:

@@ -20,10 +20,10 @@ class StripeWH_Handler:
         """Send the user a confirmation email"""
         customer_email = purchase.email
         sub = render_to_string(
-            'cart_checkout/confirmation_email/confirmation_email_sub.txt',
+            'cart_checkout/confirm_email/confirm_email_sub.txt',
             {'purchase': purchase})
         body = render_to_string(
-            'cart_checkout/confirmation_email/confirmation_email_body.txt',
+            'cart_checkout/confirm_email/confirm_email_body.txt',
             {'purchase': purchase, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
@@ -149,5 +149,5 @@ class StripeWH_Handler:
         Handle the payment_intent.payment_failed webhook from Stripe
         """
         return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
+            content=f'Payment Failed Webhook received: {event["type"]}',
             status=200)
