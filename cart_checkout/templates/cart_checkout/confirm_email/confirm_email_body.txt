@@ -13,7 +13,7 @@ Your purchase will be shipped to {{ purchase.street_address1 }} in {{ purchase.t
 
 We've got your phone number on file as {{ purchase.phone_number }}.
 
-If you have any questions, feel free to contact us at {{ contact_email }}.
+If you have any questions, feel free to contact us at {{ site_domain }}.
 
 Stay Werid! :)
 
