@@ -470,7 +470,7 @@ select option[value=""] {
 /* Mailchimp */
 
 #mc_embed_signup {
-    background: rgba(75, 0, 0, 0);
+    background:  linear-gradient(0.25turn, #900000, #6A2659, #900000);
     clear: left;
     font: 14px 'Kanit', Arial, sans-serif;
 }
