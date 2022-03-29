@@ -143,8 +143,12 @@ a:hover {
     z-index: -1;
 }
 
+.category-badge>span.badge {
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000)!important;
+}
+
 a.category-badge>span.badge:hover {
-    background: rgb(65, 0, 0) !important;
+    background: linear-gradient(0.25turn, #e90404, #be43a0, #d80000)!important;
     color: white !important;
 }
 
@@ -447,7 +451,7 @@ select option[value=""] {
     }
 
     .navbar-toggler-icon {
-        color:rgb(255, 255, 255)!important;
+        color:rgb(255, 255, 255)
     }
 
     #delivery-banner h4 {
