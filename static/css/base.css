@@ -74,11 +74,11 @@ body {
 }
 
 a {
-    color: #e700ad;
+    color: #ffffff;
 }
 
 a:hover {
-    color: #e700ad;
+    color: #ffffff;
 }
 
 .fa-heart {
@@ -446,6 +446,10 @@ select option[value=""] {
         font-size: 1rem;
     }
 
+    .navbar-toggler-icon {
+        color:rgb(255, 255, 255)!important;
+    }
+
     #delivery-banner h4 {
         font-size: .9rem;
     }
@@ -469,10 +473,8 @@ select option[value=""] {
 
 /* Mailchimp */
 
-#mc_embed_signup {
-    background:  linear-gradient(0.25turn, #900000, #6A2659, #900000);
-    clear: left;
-    font: 14px 'Kanit', Arial, sans-serif;
+#mc-embedded-subscribe {
+    margin-left: 25%;
 }
 
 #contact-button {
@@ -487,7 +489,7 @@ select option[value=""] {
 form was effecting it */
 .crispy-override {
     height: calc(1.5em + 0.5rem + 2px) !important;
-    font-size: .875rem!important;
+    font-size: 1.875rem!important;
     line-height: 1.5!important;
     border-radius: 0.2rem!important;
     width: auto!important;
@@ -498,10 +500,9 @@ form was effecting it */
 
 .footer-list > * {
     color: #f8f9fa;
-    background-color: #622b60;
-    border: 2px solid #e9ecef;
-    border-radius: 5px;
-    padding: 6px;
+    background-color: linear-gradient(0.25turn, #900000, #6A2659, #900000);
+    border: 1px solid #e9ecef;
+    padding: 3px;
 }
 .footer-div {
     background: linear-gradient(0.25turn, #900000, #6A2659, #900000); 
@@ -510,9 +511,9 @@ form was effecting it */
 }
 
 .explore-button {
-    background: #622b60;
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
     color: #ffffff;
-    border: 2px solid #e9ecef;
+    border: 1px solid #e9ecef;
     border-radius: 5px;
     padding: 6px;
 }
