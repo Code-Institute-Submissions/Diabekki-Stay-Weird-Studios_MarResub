@@ -408,6 +408,22 @@ select option[value=""] {
     border-radius: 0;
 }
 
+.navbar-toggler {
+    line-height: 1;
+    background-color: white;
+    border: 1px solid;
+}
+
+.navbar-toggler.collapsed{
+    background-color: rgb(255, 255, 255) !important;
+}
+
+@media (min-width: 320px) {
+    .text-primary {
+        color: #ffc107!important;
+    }
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -433,38 +449,40 @@ select option[value=""] {
         height: calc(100vh - 116px);
     }
 
-    .display-4.logo-font.text-black {
-        font-size: 2rem;
+    .display-4.logo-font.text-white {
+        font-size: 2.5rem;
     }
 
     .nav-link {
-        padding: 0.15rem;
+        padding: .15rem;
+        color: rgb(255, 255, 255);
     }
 
     .nav-link i.fa-lg {
         font-size: 1rem;
+        color: #ffffff;
     }
 
     .navbar-toggler {
-        padding: .6rem .6rem;
+        padding: .3rem .3rem;
         font-size: 1rem;
     }
 
     .navbar-toggler-icon {
-        color:rgb(255, 255, 255)
+        color:rgb(255, 255, 255)!important
     }
 
     #delivery-banner h4 {
         font-size: .9rem;
     }
 
-    .btn.btn-outline-black.rounded-0,
-    .btn.btn-black.rounded-0 {
+    .btn.btn-outline-white.rounded-0,
+    .btn.btn-white.rounded-0 {
         padding: .375rem .375rem;
     }
 
-    .btn.btn-outline-black.rounded-0.btn-lg,
-    .btn.btn-black.rounded-0.btn-lg {
+    .btn.btn-outline-white.rounded-0.btn-lg,
+    .btn.btn-white.rounded-0.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
     }
