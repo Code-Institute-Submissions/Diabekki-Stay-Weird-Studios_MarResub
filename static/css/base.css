@@ -450,11 +450,11 @@ select option[value=""] {
     }
 
     .display-4.logo-font.text-white {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .nav-link {
-        padding: .15rem;
+        padding: 0.10rem;
         color: rgb(255, 255, 255);
     }
 
@@ -476,13 +476,13 @@ select option[value=""] {
         font-size: .9rem;
     }
 
-    .btn.btn-outline-white.rounded-0,
-    .btn.btn-white.rounded-0 {
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-white.black-0 {
         padding: .375rem .375rem;
     }
 
-    .btn.btn-outline-white.rounded-0.btn-lg,
-    .btn.btn-white.rounded-0.btn-lg {
+    .btn.btn-outline-black.rounded-0.btn-lg,
+    .btn.btn-black.rounded-0.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
     }
