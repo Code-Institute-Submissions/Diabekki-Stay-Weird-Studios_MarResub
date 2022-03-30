@@ -9,7 +9,8 @@ class MerchForm(forms.ModelForm):
         model = Merch
         fields = '__all__'
 
-    image = forms.ImageField(label='image', required=False, widget=CustomClearFileInput)
+    image = forms.ImageField(
+        label='image', required=False, widget=CustomClearFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

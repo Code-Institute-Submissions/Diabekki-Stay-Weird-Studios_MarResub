@@ -1,4 +1,5 @@
-from django.shortcuts import (render, redirect, reverse, HttpResponse, get_object_or_404)
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
 from django.contrib import messages
 
 from merchandise.models import Merch
@@ -26,17 +27,25 @@ def shopping_cart_quantity(request, merch_id):
         if merch_id in list(cart.keys()):
             if clothing_size in cart[merch_id]['item_size'].keys():
                 cart[merch_id]['item_size'][clothing_size] += quantity
-                messages.success(request, (f'Updated size {clothing_size.upper()} 'f'{merch.name} quantity to 'f'{cart[merch_id]["item_size"][clothing_size]}'))
+                messages.success(request, (f'Updated size {clothing_size.upper()} \
+                    'f'{merch.name} quantity to \
+                         'f'{cart[merch_id]["item_size"][clothing_size]}'))
             else:
                 cart[merch_id]['item_size'][clothing_size] = quantity
-                messages.success(request, (f'Added size {clothing_size.upper()} 'f'{merch.name} to your shopping cart'))
+                messages.success(
+                    request, (f'Added size \
+                         {clothing_size.upper()} 'f'{merch.name} to \
+                              your shopping cart'))
         else:
             cart[merch_id] = {'item_size': {clothing_size: quantity}}
-            messages.success(request, (f'Added size {clothing_size.upper()} 'f'{merch.name} to your shopping'))
+            messages.success(request, (f'Added size \
+                 {clothing_size.upper()} 'f'{merch.name} to \
+                      your shopping cart'))
     else:
         if merch_id in list(cart.keys()):
             cart[merch_id] += quantity
-            messages.success(request, f'Updated {merch.name} number to {cart[merch_id]}!')
+            messages.success(request, f'Updated {merch.name} \
+                number to {cart[merch_id]}!')
         else:
             cart[merch_id] = quantity
             messages.success(request, f'Added {merch.name} to shopping cart!')
@@ -58,19 +67,24 @@ def change_cart(request, merch_id):
     if clothing_size:
         if quantity > 0:
             cart[merch_id]['item_size'][clothing_size] = quantity
-            messages.success(request, f'Updated size {clothing_size.upper()}{merch.name} number to {cart[merch_id]["item_size"][clothing_size]}!')
+            messages.success(request, f'Updated size \
+                {clothing_size.upper()}{merch.name} number \
+                     to {cart[merch_id]["item_size"][clothing_size]}!')
         else:
             del cart[merch_id]['item_size'][clothing_size]
             if not cart[merch_id]['item_size'][clothing_size]:
                 cart.pop(merch_id)
-            messages.success(request, f'Removed size {clothing_size.upper()}{merch.name} from shopping cart!')
+            messages.success(request, f'Removed size \
+                 {clothing_size.upper()}{merch.name} from shopping cart!')
     else:
         if quantity > 0:
             cart[merch_id] = quantity
-            messages.success(request, f'Updated {merch.name} number to {cart[merch_id]}!')
+            messages.success(request, f'Updated \
+                 {merch.name} number to {cart[merch_id]}!')
         else:
             cart.pop(merch_id)
-            messages.success(request, f'Removed {merch.name} from shopping cart!')
+            messages.success(request, f'Removed \
+                 {merch.name} from shopping cart!')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -86,15 +100,18 @@ def remove_merch(request, merch_id):
         if 'merch_size' in request.POST:
             clothing_size = request.POST['merch_size']
             cart = request.session.get('cart', {})
-            
+
         if clothing_size:
             del cart[merch_id]['item_size'][clothing_size]
             if not cart[merch_id]['item_size']:
                 cart.pop(merch_id)
-            messages.success(request, f'Removed size {clothing_size.upper()}{merch.name} from shopping cart!')
+            messages.success(
+                request, f'Removed size\
+                     {clothing_size.upper()}{merch.name} from shopping cart!')
         else:
             cart.pop(merch_id)
-            messages.success(request, f'Removed {merch.name} from shopping cart!')
+            messages.success(
+                request, f'Removed {merch.name} from shopping cart!')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)

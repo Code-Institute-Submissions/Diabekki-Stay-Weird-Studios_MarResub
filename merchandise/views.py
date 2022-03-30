@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from django.views import View
 from .models import Merch, Category, Comment
 from .forms import MerchForm, CommentForm
 
@@ -43,12 +42,14 @@ def all_merchandise(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter criteria to search for")
+                messages.error(
+                    request, "You didn't enter criteria to search for")
                 return redirect(reverse('merchandise'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             merchandise = merchandise.filter(queries)
-    
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -66,20 +67,21 @@ def merch_details(request, merch_id):
 
     merch = get_object_or_404(Merch, pk=merch_id)
     merch_category = merch.category
-    
+
     # comments = Comment.objects.all().filter(merch__name=merch)
     comments = merch.comment.filter(approved=True)
     comment_form = CommentForm()
     if request.user.is_authenticated:
         username = User.objects.get(username=request.user)
-    else:	
+    else:
         username = ''
 
     if request.method == 'POST' and request.user.is_authenticated:
         name = request.POST.get('name', username)
         email = request.POST.get('email', '')
         message = request.POST.get('message', '')
-        comments = Comment.objects.create(merch=merch, name=name, email=email, message=message)
+        comments = Comment.objects.create(
+            merch=merch, name=name, email=email, message=message)
 
     context = {
         'merch': merch,
@@ -105,7 +107,8 @@ def add_merch(request):
             messages.success(request, 'Successfully added merchandise!')
             return redirect(reverse('merch_details', args=[merch.id]))
         else:
-            messages.error(request, 'Failed to add merch. Please check form is valid.')
+            messages.error(request, 'Failed to add merch.\
+                Please check form is valid.')
     else:
         form = MerchForm()
 
@@ -132,7 +135,8 @@ def edit_merch(request, merch_id):
             messages.success(request, 'Successfully updated merchandise!')
             return redirect(reverse('merch_details', args=[merch.id]))
         else:
-            messages.error(request, 'Failed to update merch. Check if form is valid.')
+            messages.error(request, 'Failed to update merch.\
+                Check if form is valid.')
     else:
         form = MerchForm(instance=merch)
         messages.info(request, f'You are editing {merch.name}')

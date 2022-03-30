@@ -1,7 +1,6 @@
 import uuid
 from django.db import models
 from django.db.models import Sum
-from django.conf import settings
 
 from django_countries.fields import CountryField
 
@@ -75,4 +74,5 @@ class PurchaseLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.merch.sku} on purchase {self.purchase.purchase_number}'
+        return f'SKU {self.merch.sku} on purchase\
+            {self.purchase.purchase_number}'

@@ -1,19 +1,17 @@
+import json
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse
 )
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
+import stripe
+from merchandise.models import Merch
+from user_profiles.models import UserProfile
+from user_profiles.forms import UserProfileForm
+from cart.contexts import cart_contents
 from .forms import PurchaseForm
 from .models import Purchase, PurchaseLineItem
-from merchandise.models import Merch
-from user_profiles.forms import UserProfileForm
-from user_profiles.models import UserProfile
-from cart.contexts import cart_contents
-
-import stripe
-import json
 
 
 @require_POST
@@ -82,7 +80,8 @@ def cart_checkout(request):
                             purchase_line_item.save()
                 except Merch.DoesNotExist:
                     messages.error(request, (
-                        "One of the items in your cart wasn't found in our database. "
+                        "One of the items in your cart\
+                            wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     purchase.delete()
@@ -90,14 +89,17 @@ def cart_checkout(request):
 
             print('purchase:', purchase)
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('cart_checkout_success', args=[purchase.purchase_number]))
+            return redirect(
+                reverse(
+                    'cart_checkout_success', args=[purchase.purchase_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(
+                request, "There's nothing in your cart at the moment")
             return redirect(reverse('merchandise'))
 
         current_cart = cart_contents(request)
