@@ -522,7 +522,7 @@ form was effecting it */
 
 .footer-list > * {
     color: #f8f9fa;
-    background-color: linear-gradient(0.25turn, #900000, #6A2659, #900000);
+    background: linear-gradient(0.25turn, #900000, #6A2659, #900000);
     border: 1px solid #e9ecef;
     padding: 3px;
 }
