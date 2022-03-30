@@ -24,7 +24,9 @@ class StripeWH_Handler:
             {'purchase': purchase})
         body = render_to_string(
             'cart_checkout/confirm_email/confirm_email_body.txt',
-            {'purchase': purchase, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+            {
+                'purchase': purchase, 'contact_email':
+                settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
             sub,
@@ -124,7 +126,8 @@ class StripeWH_Handler:
                         )
                         purchase_line_item.save()
                     else:
-                        for clothing_size, quantity in merch_data['item_size'].items():
+                        for clothing_size, quantity in merch_data[
+                                'item_size'].items():
                             purchase_line_item = PurchaseLineItem(
                                 purchase=purchase,
                                 merch=merch,
