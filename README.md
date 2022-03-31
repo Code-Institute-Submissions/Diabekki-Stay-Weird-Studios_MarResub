@@ -87,9 +87,10 @@ Agile Development was used to plan the project. This was implemented using a kan
 - Issues where then linked to kanban board's **to do** column.
 - When a user story was being worked on, its issue was moved from the **to do** column, the **in progress** and then onto the **done** column when the task was completed. 
 - The issue was then closed.
-
 ![Kanban](media/user-story-progress.JPG)
+
 ![Kanban](media/user-story-first-done.JPG)
+
 ![Kanban](media/user-story-finished.JPG)
 
 
