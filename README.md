@@ -134,9 +134,24 @@ The main pages of the website are:
 ## Features
 This e-commerce website features easy navigation to Weird Cylinder merchandise which consist of a different array of clothing and an album with a spotify link to the album 
 
-## Wireframe 
+## Wireframes 
+Home Page
+![image](media/homepage-weird.png)
 
-![image](media/Stay-weird-fireframe.png)
+Merchandise Page
+![image](media/merch-wireframe.png)
+
+Sign In page
+![image](media/sign-in.png)
+
+Sign up page
+![image](media/sign-up.png)
+
+Shopping Cart Page
+![image](media/shopping-cart.png)
+
+Checkout Page
+![image](media/checkout-wireframe.png)
 
 
 **Existing Features**
@@ -184,20 +199,7 @@ This e-commerce website features easy navigation to Weird Cylinder merchandise w
 
 
 **Merchandsie** 
-  - Merchandise section has a selection of Weird Cylinder clothing
-  - The brand consists of casual and comfortable clothing items
-  - Nice tags and contrast price have been used in the cards to help items pop out to users
-  ![Image of weird cylinder clothing](media/merchandise-page.JPG)
-
- - There is also items such as hats and bags available 
-  ![Image of weird cylinder items](media/caps.JPG)
-  ![Image of weird cylinder items](media/bags.JPG)
-
- - An album available to purchase
-  ![Image of album](media/album-item.JPG)
-
-- Songs can be sampled from Spotify before purchase
-  ![Image of album songs](media/songs.JPG)
+  
 
  **After item is selected** 
    - Selected item has a size option ranging from xs to xl
