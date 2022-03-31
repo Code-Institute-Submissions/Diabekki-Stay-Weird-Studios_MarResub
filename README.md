@@ -175,6 +175,10 @@ Checkout Page
 - Ability to view merchandise, add merchandise to cart and remove merchandise from cart 
 - Ability to update merchandise quantity and to check out and pay for order
 
+**Facebook Buisness Page**
+  - A buisness page for stay weird studios.
+  ![Image of contact page](media/stayweirdstudios-business-page.JPG)
+
 **Existing Features**
  **Navigation Bar**
   
@@ -196,17 +200,9 @@ Checkout Page
 [back to top](#Table-of-contents)
 <br>
 
- 
-  **Facebook Buisness Page**
-  - A buisness page for stay weird studios.
-  ![Image of contact page](media/stayweirdstudios-business-page.JPG)
-
-
 # Technologies Used
 
 - [Django3](https://www.djangoproject.com/) framework
-- [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
-- [CSS3](https://en.wikipedia.org/wiki/CSS) for style
 - [Postgressql](https://www.postgresql.org/) for the database
 - [Bootstrap 4 ](https://mdbootstrap.com/) for bulk of CSS
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) for interaction
@@ -214,7 +210,6 @@ Checkout Page
 - [Python3](https://www.python.org/) as a backend 
 - [Google Fonts](https://fonts.google.com/) for fonts
 - [Font Awesome](https://fontawesome.com/) for icons
-- [Amazon AWS](https://aws.amazon.com/) for image and static files hosting
 - [Summernote](https://summernote.org/) editor for adding and editing updates
 - [Gitpod](https://www.gitpod.io/) for cloud IDE
 - [Git](https://git-scm.com/) for source control
@@ -242,19 +237,35 @@ Checkout Page
 
 
  ## Testing
-- Issues faced
-    - An error causing the marchandise to show a server error (locally this was solved but upon deployment it returned error 500)
-    - In relation to the clothing when selecting sizes the page showed an error that it was unable to find the merchandise (locally this was fixed but upon deployment it returned an error 500)
-    - Comments are returning an error, I believe this is a database issue in relation to migrations after deployment to heroku. 
-    - Stripe payments stopped working at an unknown point in development, after reviewing with my peers this seemed to be a common issue after deployment to heroku.
+ The entirety of the testing was done **manually**. 
+ Manual testing can be found [here](testing.md)
 
-- JavaScript issues
-    - Initally there was an issue when adding or removing multiples of an item. This error is fixed.
+- **PEP8 Flake** **JS** tests, **HTML and CSS Validators** were also done! 
 
-- Deployment Issues
-    - Heroku deployment caused many issues that I did not have the time available to fix. I believe that it is a database issue and that the data did not automaticly deploy as is should when pushed.
- 
-    ![image of heroku email of failure](media/heroku-failure-email.JPG)   
+- HTML Validation was done using **W3C Nu HTML Validator**:
+Validation screenshots can be found [here](W3-page-validations.md)
+<br>
+
+**W3C HTML link validator** testing: 
+![Image of html validator](media/html-no-error.JPG)
+
+CSS Validation was done using **W3C Jigsaw Validator**:
+![Image of css validator](media/css-no-error.JPG)
+
+
+Python Validation was done using **Pep8**:
+![Image of css validator](media/pep8-validate.JPG)
+  
+
+Other known errors or warnings were Missing module docstring/blank line at end of file and line too long. Errors not fixed would have broken code functionality if attempted.
+
+**Lighthouse** testing was done using **Chrome Developer Tools** :
+
+**Desktop** Test:
+![Image of lighthouse validator](media/lighthouse-desktop.JPG)
+
+**Mobile** Test:
+![Image of lighthouse validator](media/lighthouse-mobile.JPG)
 
 - User testing
     - through a personal group-chat I sent the deployed website to friends and family and received feedback from various devices.
@@ -273,42 +284,46 @@ the resolutions I have tested the website on are as follows
 - Mobile 
     - 320px-480px width 
 
-### Validator Testing 
-- HTML
-  - No error found when ran through W3C validator https://validator.w3.org/
+# Deployment
+## Heroku Deployment
+This website was deployed through Heroku:
 
-![image of error free message for W3C validator on index page](media/html-validation-success.JPG)
+1) A repository was created in github using the student template
+2) The repo was pushed to the cloud based IDE called GITPOD
+3) In the GITPOD terminal, django and its supporting libraries were installed using pip3
+4) The project is then created using using python3 manage.py startproject projectname
+5) The first app is then created using python3 manage.py createapp appname
+6) The app is then registered in the setting file in the project level settings.py. 
+7) An app is the created in heroku and the installation of postgres is done under resources making sure to add postgres url to config vars
+8) Back in the GITPOD terminal, install Django Database and psycopg2
+9) Import dj database url in your settings file and replace default database with dj database passing it postgres url
+10) Migrate database and load data in gitpod terminal 
+11) Create another super user
+12) Create an if else statement that checks the database url and runs the correct database accordingly. 
+13) Install gunicorn, create a procfile and log into heroku in the terminal. 
+14) Disable the static files using heroku config:set, DISABLE_COLLECTSTATIC=1 --app appname
+15) Add heroku app and localhost to allowed hosts in settings.py
+16) Generate a secret key using Django secret key generator and add to config vars whilst linking it to settings.py
+16) Add, commit and push changes to Github
+17) Set heroku to automatically deploy but setting it to Github and searching/connecting to correct repo. 
 
-- CSS 
-  - No error found when ran through W3C validator https://validator.w3.org/
-  ![image of error free message for website CSS](media/css-validator-success.JPG)
 
- - Lighthouse 
- ![image of error free message for lighthouse](media/lighthouse.JPG)
+[back to top](#Table-of-contents)
+<br>
 
-  ## Deployment 
-
-- The website was deployed through Heroku 
-  - I went on to the Heroku website 
-  - Clicked on "Create-New-App"
-  - Named my project and stated what region I live in
-  - I clicked into settings 
-  - Clicked into Deploy 
-  - Connected to my GitHub
-  - Searched for my project name repository and clicked connect
-  - Enabled automatic deploys
-  - Clicked "Deploy Branch" 
-
-  The live links to my project are - 
-   - https://stay-weird-studios.herokuapp.com/
-
-   - https://8000-chocolate-basilisk-xnvjgziv.ws-eu28.gitpod.io/ 
-
-   - There seems to be an issue with pushing to Heroku, the details from the local are not translating over to the deployed site.
-
-  ## Credits
-  - Fonts used throughout website was taken from Google Fonts https://fonts.google.com/
-  - Mailchimp was used to create the newsletter for the webpage https://mailchimp.com/
+# Credits
+### Code
+* [Code Institute](https://codeinstitute.net/ie/) supplied the bulk of the tutorials, resources and support for this project!
+* [Bootstrap](https://getbootstrap.com/) for creating a responsive site.
+* [Twilio](https://getbootstrap.com/) for their contact form tutorial which was adapted to create mine
+* [Bootstrap](https://getbootstrap.com/) for creating a responsive site.
+* [w3schools](https://www.w3schools.com/) was used as a general source of knowledge 
+* [youtube](https://www.youtube.com/) 
+* [Stack Overflow](https://stackoverflow.com/) 
+* [MDN Web Docs](https://developer.mozilla.org/) for various tutorials and walkthroughs!
+* [Django Docs](https://docs.djangoproject.com/en/3.2/) for django documentation.
+* [Font Awesome](https://fontawesome.com/) were used throughout website
+* [Mailchimp](https://mailchimp.com/) was used to create the subscribe newsletter for the webpage 
 
 
 ## Media 
