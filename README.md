@@ -1,8 +1,39 @@
 # Stay Weird Studios
 
+## **Code Institute - Portfolio Project 5: Ecommerce Project** 
+
 This is a e-commerce website based for a local studio run by my fiance and a fun project to help a local business owner gain traction and stand out in the music scene in Limerick.
 
+## Table of contents
++ [User Experience](#User-Experience)
+     + [Project Goals](#Project-Goals)
+     + [User Stories](#User-Stories)
+     + [Strategy](#Strategy)
+     + [Scope](#Scope)
+     + [Structure](#Structure)
+     + [Skeleton](#Skeleton)
+          + [Wireframes](#Wireframes)
+     + [Surface](#Surface)
++ [Features](#Features) 
+     + [Existing Features](#Existing-Features)
+     + [Features to Implement in the future](#Features-to-Implement-in-the-future)
++ [Database](#Database)
++ [Testing](#Testing)
++ [Bugs](#Bugs)
++ [Technologies Used](#Technologies-Used)
+     + [Resources](#Resources)
+     + [Tools](#Tools)
++ [Deployment](#Deployment)
+     + [Heroku Deployment](#Heroku-Deployment)
++ [Credits](#Credits)
+
 ![image of responsive page](media/amiresponsive.JPG)
+
+***
+# User Experience
+## Project Goals
+The primary goal of this project is to create a ecommerce store for Stay Weird Studios using its branding to create a pleasant user experience for anyone who wishes to purchase any merchandise which consist of a different array of clothing aswell as means of supporting the artist by paying for an album. 
+
 
 ## Features
 This e-commerce website features easy navigation to Weird Cylinder merchandise which consist of a different array of clothing and an album with a spotify link to the album 
