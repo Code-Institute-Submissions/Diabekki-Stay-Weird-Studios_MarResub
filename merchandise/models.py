@@ -17,8 +17,7 @@ class Category(models.Model):
 
 
 class Merch(models.Model):
-    category = models.ForeignKey(
-        'Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -36,8 +35,7 @@ class Merch(models.Model):
 
 
 class Comment(models.Model):
-    merch = models.ForeignKey(
-        Merch, on_delete=models.CASCADE, related_name="comment")
+    merch = models.ForeignKey(Merch, on_delete=models.CASCADE, related_name="comment")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     message = models.TextField()
@@ -48,5 +46,4 @@ class Comment(models.Model):
         ordering = ["added_on"]
 
     def __str__(self):
-        return f"{self.name} commented: {self.message}\
-            on the following merchandise: {self.merch}"
+        return f"{self.name} commented: {self.message} on the following merchandise: {self.merch}"

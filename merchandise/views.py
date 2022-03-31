@@ -69,6 +69,7 @@ def merch_details(request, merch_id):
     merch_category = merch.category
 
     # comments = Comment.objects.all().filter(merch__name=merch)
+    commented = False
     comments = merch.comment.filter(approved=True)
     comment_form = CommentForm()
     if request.user.is_authenticated:
@@ -78,14 +79,15 @@ def merch_details(request, merch_id):
 
     if request.method == 'POST' and request.user.is_authenticated:
         name = request.POST.get('name', username)
+        commented = True
         email = request.POST.get('email', '')
         message = request.POST.get('message', '')
-        comments = Comment.objects.create(
-            merch=merch, name=name, email=email, message=message)
+        Comment.objects.create(merch=merch, name=name, email=email, message=message)
 
     context = {
         'merch': merch,
         'merch_category': merch_category,
+        'commented': commented,
         'comments': comments,
         'comment_form': comment_form,
     }

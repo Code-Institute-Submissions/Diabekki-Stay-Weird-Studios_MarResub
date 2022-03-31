@@ -120,26 +120,22 @@
         <div class="col-md-8 card mb-5 mt-5" style="background-color: rgba(83, 0, 0, 0.623);">
             <h3 class="text-white" style="padding-top: 4%;">Comments:</h3>
             <div class="card-body text-white">
-                {% if comments %}
-                <!-- We want a for loop inside the empty control tags to iterate through each review in reviews -->
+                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="comments" style="background-color: rgba(98, 43, 96, 0.397);" >
                     <p class="font-weight-bold">
-                        <!-- The reviewers's name goes here. -->
+                        <!-- The name goes here. -->
                         {{ comment.name }}
                         <span class="font-weight-normal">
-                            <!-- The reviews created date goes here -->
+                            <!-- The comment created date goes here -->
                             {{ comment.added_on }}
                         </span>
                     </p>
-                    <!-- The body of the review goes before the | -->
+                    <!-- The body of the comment goes before the | -->
                     <p id="comment-message">{{ comment.message}}</p>
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
-                {% else %}
-                <p>No comments yet</p>
-                {% endif %}
             </div>
         </div>
         <div class="col-md-4 card mb-5 mt-5" style="background-color: rgba(114, 0, 0, 0.288);">
