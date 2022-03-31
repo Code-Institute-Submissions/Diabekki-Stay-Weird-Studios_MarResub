@@ -140,22 +140,22 @@ This e-commerce website features easy navigation to Weird Cylinder merchandise w
 
 ## Wireframes 
 Home Page
-![image](media/homepage-weird.png)
+![Wireframe of homepage](media/homepage-weird.png)
 
 Merchandise Page
-![image](media/merch-wireframe.png)
+![Wireframe of merchandise](media/merch-wireframe.png)
 
 Sign In page
-![image](media/sign-in.png)
+![Wireframe of Sign in page](media/sign-in.png)
 
 Sign up page
-![image](media/sign-up.png)
+![Wireframe of Register page](media/sign-up.png)
 
 Shopping Cart Page
-![image](media/shopping-cart.png)
+![Wireframe of Shopping cart](media/shopping-cart.png)
 
 Checkout Page
-![image](media/checkout-wireframe.png)
+![Wireframe of Checkout page](media/checkout-wireframe.png)
 
 
 [back to top](#Table-of-contents)
@@ -177,7 +177,9 @@ Checkout Page
 
 **Facebook Buisness Page**
   - A buisness page for stay weird studios.
-  ![Image of contact page](media/stayweirdstudios-business-page.JPG)
+  ![Image of business page](media/stayweirdstudios-business-page.JPG)
+    - This is a screenshot taken from weird cylinder studios.
+      The site is located on facebook and is a direct link for potential clients for gigs and such. 
 
 **Existing Features**
  **Navigation Bar**
@@ -269,10 +271,6 @@ Other known errors or warnings were Missing module docstring/blank line at end o
 
 - User testing
     - through a personal group-chat I sent the deployed website to friends and family and received feedback from various devices.
-    - I had review the page to give me opinions on further development. 
-
-- Summary
-    - In summary locally the website worked well and was fully functional. Upon deployment what I expect to be a database issue has cause most models to fail functionally.  
 
 the resolutions I have tested the website on are as follows 
 - Desktop screen
@@ -329,10 +327,10 @@ This website was deployed through Heroku:
 ## Media 
 - Image media was taken from
    - Facebook https://facebook.com/
-   - With regards to images and information regarding WeirdCylinder and Stay Weird Studios, I was giving full permission to use asll relevent information by the owner Evan Murphy. 
+   - With regards to images and information regarding WeirdCylinder and Stay Weird Studios, I was giving full permission to use all relevent information by the owner Evan Murphy. 
 
-## Acknowledgements
 
-I want to thank my Fiance who kept pushing me to keep bettering myself and not letting me give up and for giving me advice on how get the readme to sound more structured and professional.
-Fellow students for letting me vent frustrations when I felt overwhelmed with the work and helping deal with the emotional pressure of course work not going as planned.
-I did not have a mentor through this project due to previous issues so I had to do this project more so on my own.
+### Acknowledgements
+* I want to thank my Fiance who kept pushing me to keep bettering myself and not letting me give up and for giving me advice on how get the readme to sound more structured and professional.
+* Fellow students for letting me vent frustrations when I felt overwhelmed with the work and helping deal with the emotional pressure of course work not going as planned. 
+* I did not have a mentor through this project due to previous issues so I had to do this project more so on my own.
