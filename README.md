@@ -98,6 +98,38 @@ To achieve user and owner’s goals, below are the minimum features to be includ
 [back to top](#Table-of-contents)
 <br>
 
+## Structure
+
+The entire web app has the same menu and footer. 
+
+The menu has the following navigation links:
+- Title leads to home page
+- All Merchandise leads to all merchandise page with option to sort by price, rating or category and all merchandise option
+- Clothing Merch leads to clothing page with option to view specifiic products by category
+- Album leads to album view page
+
+
+The footer has the following navigation links:
+- Basic newsletter sign up form powered by mailchimp
+- Give us feedback button takes user to feedback form
+- Contact us button takes user to contact form
+- Git hub icon and name takes user to developers github profile. 
+- Facebook icon and name takes user to store facebook page. 
+
+The main pages of the website are:
+
+- Homepage(index.html) - Which takes users to home page
+- Checkout(cart_checkout.html) - Which takes user to checkout page
+- Merchandise page(merchandise.html) - Which all merchandise 
+- Merch view page(merch_details.html) - Which views merchandise 
+- Add Merchandise page(add_merch.html) - Which adds merchandise  
+- Edit Merchandise page(edit_merch.html) - Which edits merchandise 
+- Feedback page (feedback.html) - Goes to feedback page  
+- Contact us page(contact.html) - Goes to Contact us page 
+<br>
+
+[back to top](#Table-of-contents)
+<br>
 
 ## Features
 This e-commerce website features easy navigation to Weird Cylinder merchandise which consist of a different array of clothing and an album with a spotify link to the album 
