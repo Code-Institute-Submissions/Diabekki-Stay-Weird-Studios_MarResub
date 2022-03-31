@@ -40,7 +40,6 @@ The primary goal of this project is to create an ecommerce store for Stay Weird 
 ### Core 
 - As a **shopper** I want to be able to **view merchandise** so I can **browse the website for purchases**
 - As a **shopper** I want to be able to **clearly see specific merch and services** so I can **avoid searching through the entire site or range of products**
-- As a **shopper** I want to be able to **identify deals** so I can **see special offers to save money**
 - As a **shopper** I want to be able to **quickly see my total of purchases** so I can **avoid spending too much**
 - As a **shopper** I want to be able to **see a list of services** so I can **pick the specific service for my needs**
 - As a **shopper** I want to be able to **see the price of all services** so I can **know the price in advance of payment**
@@ -75,6 +74,23 @@ The primary goal of this project is to create an ecommerce store for Stay Weird 
 - As a **store owner** I want to be able to **add products** so I can **add new merchandise and services to store**
 - As a **store owner** I want to be able to **edit/update products/services** so I can **change item details if needed**
 - As a **store owner** I want to be able to **delete products** so I can **remove items/services no longer available**
+
+## Strategy
+### — Project Planning —
+
+Agile Development was used to plan the project. This was implemented using a kanban board in github issues and projects. 
+
+[Here](https://github.com/Diabekki/Stay-Weird-Studios/projects/3) is the link to my kanban board.
+
+- First the **user stories** were mapped to **issues**.
+- The new Github Projects feature was utilized for the kanban board. It was linked to the **stay-weird-studios**
+- Issues where then linked to kanban board's **to do** column.
+- When a user story was being worked on, its issue was moved from the **to do** column, the **in progress** and then onto the **done** column when the task was completed. 
+- The issue was then closed.
+
+![Kanban](media/user-story-progress.JPG)
+![Kanban](media/user-story-first-done.JPG)
+![Kanban](media/user-story-finished.JPG)
 
 
 [^ back to top ^](#Table-of-contents)
@@ -165,13 +181,15 @@ Checkout Page
 - Contact Form
 - Ability to create, read, update and delete products for admin
 - Ability for admin to delete and verify users in admin panel
+- Ability to comment on merchandise
 - Ability for admin to approve of comments under merchandise
 - Ability to sign in, sign out and register
 - Ability to view merchandise, add merchandise to cart and remove merchandise from cart 
 - Ability to update merchandise quantity and to check out and pay for order
+- Stripe payments implemeted to ensure secure purchase
 
 **Facebook Buisness Page**
-  - A buisness page for stay weird studios.
+  - A business page for stay weird studios.
   ![Image of business page](media/stayweirdstudios-business-page.JPG)
     - This is a screenshot taken from stay weird studios.
       The site is located on facebook and is a direct link for potential clients for gigs and such. 
@@ -206,6 +224,7 @@ Checkout Page
 - [Python3](https://www.python.org/) as a backend 
 - [Google Fonts](https://fonts.google.com/) for fonts
 - [Font Awesome](https://fontawesome.com/) for icons
+- [Stripe](https://stripe.com/ie) for payments section
 - [Summernote](https://summernote.org/) editor for adding and editing updates
 - [Gitpod](https://www.gitpod.io/) for cloud IDE
 - [Git](https://git-scm.com/) for source control
