@@ -76,6 +76,28 @@ The primary goal of this project is to create a ecommerce store for Stay Weird S
 - As a **store owner** I want to be able to **edit/update products/services** so I can **change item details if needed**
 - As a **store owner** I want to be able to **delete products** so I can **remove items/services no longer available**
 
+[^ back to top ^](#Table-of-contents)
+<br>
+
+## Scope
+
+To achieve user and owner’s goals, below are the minimum features to be included in this project. Also, **CRUD** Create, Read, Update, and Delete functions are required for this project so these are implemented as a part of the essential features.
+
+
+- Simple homepage that links to the products page
+- Register page and validate email/username with confirmation via email
+- Sign in page where users can sign into and out of their accounts.
+- Login page  
+- Feedback form  
+- Contact form
+- Ability to sign up for newsletter in pop up for marketing purposes
+- Ability to make payments using stripe for credit card and receive order confirmation via email
+- Ability to Add, delete, update products in product admin
+- Ability to add and remove products from cart
+
+[back to top](#Table-of-contents)
+<br>
+
 
 ## Features
 This e-commerce website features easy navigation to Weird Cylinder merchandise which consist of a different array of clothing and an album with a spotify link to the album 
