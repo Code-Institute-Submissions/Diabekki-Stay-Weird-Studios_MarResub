@@ -76,6 +76,10 @@ The primary goal of this project is to create a ecommerce store for Stay Weird S
 - As a **store owner** I want to be able to **edit/update products/services** so I can **change item details if needed**
 - As a **store owner** I want to be able to **delete products** so I can **remove items/services no longer available**
 
+
+# Example
+- As a **** I want to be able to **** so I can ****
+
 [^ back to top ^](#Table-of-contents)
 <br>
 
@@ -154,6 +158,23 @@ Checkout Page
 ![image](media/checkout-wireframe.png)
 
 
+[back to top](#Table-of-contents)
+<br>
+
+# FEATURES
+
+## Existing Features 
+#### **Navigation menu displayed across all pages**
+
+- Navigation menu
+- Website Title that redirects to home page
+- Contact Form
+- Ability to create, read, update and delete products for admin
+- Ability for admin to delete and verify users in admin panel
+- Ability to sign in, sign out and register
+- Ability to view merchandise, add merchandise to cart and remove merchandise from cart 
+- Ability to update merchandise quantity and to check out and pay for order
+
 **Existing Features**
  **Navigation Bar**
   
@@ -162,147 +183,62 @@ Checkout Page
   - There is a search section for easy navigation to merchandise
   - There is easy navigation to account and also checkout-cart
 
-  ![image of navbar](media/navbar.JPG)
 
-  **Main page text**
-  - Main page is simple and clean with a calming color scheme and easy to read writing 
-  - Merchandise button gives easy access to items that can be purchased
+  ## Features to Implement in the future 
 
-  ![Image of merchandise button](media/merchandise.JPG)
+- More song and albums to be added
+- Create a updates section for events
+- Create a blog to allow the artist to express their thoughts with their fans
+- Add an events page for gigs
+- Have a page dedicated to teaching instruments
+- Prices for services
 
- **Main page image**
-  - The image chosen fit very well with the page intent.
-  - The colourful image conveys what the user should be expecting from the page.
-  - User will be very much aware of the musical intent for this website
- ![Image of studio microphone](media/microphone.jpg)
+[back to top](#Table-of-contents)
+<br>
 
-
- **Footer, copyright text** 
-  - The footer consists of a red to purple gradient for a sleek vibe that is in sync with the websites theme.
-  - I kept the footer simple for the same reason the navigation bar was styled simplistically, users can easily find their way around the footer
-
-   ![Image of website footer with copyright text](media/footer.JPG)
-
-**Features in navbar**
-  - Navbar has access to all merchandise categories from size to price.
-
-  ![image of merchandise selector](media/merchandise-selector.JPG)
-
-  - Clothing merchandise selector.
-  ![image of clothing selector](/media/clothing-selection.JPG)
-
-  - The aim of the quiz is to be both fun and challenging to the user.
-  ![image of merchandise selector](media/merchandise-selector.JPG)
-
-  - Account selector 
-  ![image of account selector](media/account-selector.JPG)
-
-
-**Merchandsie** 
-  
-
- **After item is selected** 
-   - Selected item has a size option ranging from xs to xl
-   - The image is large for accessibility 
-   - Style was kept simple in order not to confuse customers
-  
-   ![Image of selected item](media/selected-item.JPG)
-
-   **Comments**
-   - User can comment on items they like and or give a review comment of how things can improve 
-
-   ![Image of comment section](media/comments.JPG)
-
-   **Merchandise Mangement**
-   - A section where registered users can add merchandsie to the website
-   ![Image of add merchandise section](media/merch-management.JPG)
-
-   **User Profile**
-   - A profile section for registered users to update their information and see purchase history
-   ![Image of profile section](media/profile.JPG)
-
-   **Cart Add**
-   - User gets notification of their selected item added to the cart 
-   ![Image of added to cart section](media/cart-add.JPG)
-
-   **Checkout**
-   - User gets taken to page to checkout their item for purchase
-   ![Image of checkout](media/checkout-secure.JPG)
-
-   - Payment area for checkout
-  ![Image of payment](media/payment.JPG)
-
-  - Area for completed purchases
-  ![Image of payment confirmation](media/purchase-information.JPG)
-
-  **Contact us**
-  - A page to contact us for users to get in touch
-  ![Image of contact page](media/contact.JPG)
-
-  - A thank you page after submitting contact query
-  ![Image of contact page](media/thank-you-page.JPG)
  
   **Facebook Buisness Page**
   - A buisness page for stay weird studios.
   ![Image of contact page](media/stayweirdstudios-business-page.JPG)
 
 
-  **Features left to add**
-    - More merchandise to be added.
-    - More songs and albums to be added.
-    - Create a section to track upcoming events related to stay weird studios.
-    - Create a blog to allow the artist to express their thoughts and feelings of the music being produced.
-    
-    
-    
- ## USER STORIES
+# Technologies Used
 
-- As a **shopper** I want to be able to **view merchandise** so I can **browse the website for purchases**
-- As a **shopper** I want to be able to **clearly see specific merch and service** so I can **avoid searching through the entire site or range of products**
-- As a **shopper** I want to be able to **identify deals** so I can **see special offers to save money**
-- As a **shopper** I want to be able to **quickly see my total of purchases** so I can **avoid spending too much**
-- As a **shopper** I want to be able to **see list of services** so I can **pick the specific service for my needs**
-- As a **shopper** I want to be able to **see the price of all services** so I can **know price in advance of payment**
-
-
-
-## REGISTRATION AND ACCOUNTS
-
-- As a **site user** I want to be able to **register for an account** so I can **view my personal profile**
-- As a **site user** I want to be able to **login and logout** so I can **access and secure my personal information**
-- As a **site user** I want to be able to **recover my password** so I can **recover access to account if password is forgotton**
-- As a **site user** I want to be able to **receive confirmation email** so I can **verify my account**
-- As a **site user** I want to be able to **have a personal profile** so I can **save payment information**
+- [Django3](https://www.djangoproject.com/) framework
+- [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
+- [CSS3](https://en.wikipedia.org/wiki/CSS) for style
+- [Postgressql](https://www.postgresql.org/) for the database
+- [Bootstrap 4 ](https://mdbootstrap.com/) for bulk of CSS
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) for interaction
+- [JQUERY](https://jquery.com/) for interaction
+- [Python3](https://www.python.org/) as a backend 
+- [Google Fonts](https://fonts.google.com/) for fonts
+- [Font Awesome](https://fontawesome.com/) for icons
+- [Amazon AWS](https://aws.amazon.com/) for image and static files hosting
+- [Summernote](https://summernote.org/) editor for adding and editing updates
+- [Gitpod](https://www.gitpod.io/) for cloud IDE
+- [Git](https://git-scm.com/) for source control
+- [GitHub](https://github.com/) for file and documents hosting
+- [Heroku](https://www.heroku.com/) for website deployment
 
 
-## SORTING / SEARCHING
+## Resources 
 
-- As a **shopper** I want to be able to **sort specific products/services** so I can **find the best price for those products/services**
-- As a **shopper** I want to be able to **see list of available products/services** so I can **find and purchase one I need**
-- As a **shopper** I want to be able to **search for products/services by name** so I can **easily find a specific product/service**
-- As a **shopper** I want to be able to **easily see results and availability from search** so I can **quickly see if that product/service is currently available**
+- Code Institute Course Materials
+- [Stack Overflow](https://stackoverflow.com/)
+- [YouTube](https://www.youtube.com/)
+- [W3schools](https://www.w3schools.com/)
+- [Google](https://www.google.com/)
 
+## Tools
 
-## PURCHASING AND CHECKOUT
+- [Balsamiq](https://balsamiq.com/) for wireframes
+- [W3C Markup Validation Service](https://validator.w3.org/) for testing HTML code
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) for testing CSS code
+- [jshint](https://jshint.com/) for testing JavaScript code
+- [PEP8 Online](http://pep8online.com/) for checking Python code compliance
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) for testing, style checking and debugging
 
-
-- As a **shopper** I want to be able to **select size and quantity of merch** so I can **ensure the wrong size/quantity is not purchased**
-- As a **shopper** I want to be able to **view items or service in cart** so I can **identify total cost for checkout**
-- As a **shopper** I want to be able to **alter quantity of goods** so I can **make changes before purchasing**
-- As a **shopper** I want to be able to **enter payment details** so I can **buy services or products**
-- As a **shopper** I want to be able to **ensure I feel safe purchasing** so I can **make payments confidentially**
-- As a **shopper** I want to be able to **view order confirmation after checkout** so I can **verify there are no mistakes in my order or details**
-- As a **shopper** I want to be able to **receive email after checkout** so I can **confirm payment for order was successful**
-
-## ADMIN
-
-- As a **store owner** I want to be able to **add products** so I can **add new merchandise and services to store**
-- As a **store owner** I want to be able to **edit/update products/services** so I can **change item details if needed**
-- As a **store owner** I want to be able to **delete products** so I can **remove items/services no longer available**
-
-
-# Example
-- As a **** I want to be able to **** so I can ****
 
 
  ## Testing
