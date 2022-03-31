@@ -27,12 +27,54 @@ This is a e-commerce website based for a local studio run by my fiance and a fun
      + [Heroku Deployment](#Heroku-Deployment)
 + [Credits](#Credits)
 
-![image of responsive page](media/amiresponsive.JPG)
+![image of responsive page](media/am-i-responsive.JPG)
 
 ***
 # User Experience
 ## Project Goals
 The primary goal of this project is to create a ecommerce store for Stay Weird Studios using its branding to create a pleasant user experience for anyone who wishes to purchase any merchandise which consist of a different array of clothing aswell as means of supporting the artist by paying for an album. 
+
+
+## User Stories
+
+### Core 
+- As a **shopper** I want to be able to **view merchandise** so I can **browse the website for purchases**
+- As a **shopper** I want to be able to **clearly see specific merch and service** so I can **avoid searching through the entire site or range of products**
+- As a **shopper** I want to be able to **identify deals** so I can **see special offers to save money**
+- As a **shopper** I want to be able to **quickly see my total of purchases** so I can **avoid spending too much**
+- As a **shopper** I want to be able to **see list of services** so I can **pick the specific service for my needs**
+- As a **shopper** I want to be able to **see the price of all services** so I can **know price in advance of payment**
+
+
+### Authentication 
+- As a **site user** I want to be able to **register for an account** so I can **view my personal profile**
+- As a **site user** I want to be able to **login and logout** so I can **access and secure my personal information**
+- As a **site user** I want to be able to **recover my password** so I can **recover access to account if password is forgotton**
+- As a **site user** I want to be able to **receive confirmation email** so I can **verify my account**
+- As a **site user** I want to be able to **have a personal profile** so I can **save payment information**
+
+### Sorting/Searching
+
+- As a **shopper** I want to be able to **sort specific products/services** so I can **find the best price for those products/services**
+- As a **shopper** I want to be able to **see list of available products/services** so I can **find and purchase one I need**
+- As a **shopper** I want to be able to **search for products/services by name** so I can **easily find a specific product/service**
+- As a **shopper** I want to be able to **easily see results and availability from search** so I can **quickly see if that product/service is currently available**
+
+### Payment
+
+- As a **shopper** I want to be able to **select size and quantity of merch** so I can **ensure the wrong size/quantity is not purchased**
+- As a **shopper** I want to be able to **view items or service in cart** so I can **identify total cost for checkout**
+- As a **shopper** I want to be able to **alter quantity of goods** so I can **make changes before purchasing**
+- As a **shopper** I want to be able to **enter payment details** so I can **buy services or products**
+- As a **shopper** I want to be able to **ensure I feel safe purchasing** so I can **make payments confidentially**
+- As a **shopper** I want to be able to **view order confirmation after checkout** so I can **verify there are no mistakes in my order or details**
+- As a **shopper** I want to be able to **receive email after checkout** so I can **confirm payment for order was successful**
+
+### Admin
+
+- As a **store owner** I want to be able to **add products** so I can **add new merchandise and services to store**
+- As a **store owner** I want to be able to **edit/update products/services** so I can **change item details if needed**
+- As a **store owner** I want to be able to **delete products** so I can **remove items/services no longer available**
 
 
 ## Features
